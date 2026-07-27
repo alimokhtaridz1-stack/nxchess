@@ -11,9 +11,9 @@ const featuredProducts = [
     price: "$89.99",
     tag: "Best Seller",
     icon: "♚",
-    badgeColor: "bg-chess-green/25 text-chess-green-light border-chess-green/50",
+    badgeColor: "bg-chess-green/15 text-chess-green-light border-chess-green/30",
     hoverGlow: "hover-glow-green",
-    iconBg: "bg-gradient-to-br from-chess-green/30 to-emerald-900/50 text-chess-green-light border-chess-green/30",
+    iconBg: "bg-surface-elevated text-chess-green-light border-border",
   },
   {
     id: "2",
@@ -22,9 +22,9 @@ const featuredProducts = [
     price: "$129.99",
     tag: "Handcrafted",
     icon: "♝",
-    badgeColor: "bg-gold/25 text-gold-light border-gold/50",
+    badgeColor: "bg-gold/15 text-gold-light border-gold/30",
     hoverGlow: "hover-glow-gold",
-    iconBg: "bg-gradient-to-br from-amber-500/30 to-orange-900/50 text-gold-light border-gold/30",
+    iconBg: "bg-surface-elevated text-gold-light border-border",
   },
   {
     id: "3",
@@ -33,9 +33,9 @@ const featuredProducts = [
     price: "$54.99",
     tag: "Tech Edition",
     icon: "⏱",
-    badgeColor: "bg-tech-blue/25 text-tech-blue-light border-tech-blue/50",
+    badgeColor: "bg-tech-blue/15 text-tech-blue-light border-tech-blue/30",
     hoverGlow: "hover-glow-tech",
-    iconBg: "bg-gradient-to-br from-cyan-500/30 to-blue-900/50 text-tech-blue-light border-tech-blue/30",
+    iconBg: "bg-surface-elevated text-tech-blue-light border-border",
   },
 ];
 
@@ -48,7 +48,7 @@ const services = [
     href: "/coaching",
     isFeatured: true,
     hoverGlow: "hover-glow-green",
-    iconBg: "bg-gradient-to-br from-chess-green/30 to-emerald-600/30 text-chess-green-light border border-chess-green/40",
+    iconBg: "bg-chess-green/10 text-chess-green-light border border-chess-green/30",
   },
   {
     icon: "♟",
@@ -58,7 +58,7 @@ const services = [
     href: "/coaching",
     isFeatured: false,
     hoverGlow: "hover-glow-gold",
-    iconBg: "bg-gradient-to-br from-amber-500/30 to-orange-600/30 text-gold-light border border-gold/40",
+    iconBg: "bg-gold/10 text-gold-light border border-gold/30",
   },
   {
     icon: "♚",
@@ -68,7 +68,7 @@ const services = [
     href: "/coaching",
     isFeatured: false,
     hoverGlow: "hover-glow-tech",
-    iconBg: "bg-gradient-to-br from-cyan-500/30 to-blue-600/30 text-tech-blue-light border border-tech-blue/40",
+    iconBg: "bg-tech-blue/10 text-tech-blue-light border border-tech-blue/30",
   },
 ];
 
@@ -76,26 +76,22 @@ const whyReasons = [
   {
     title: "Self-Paced Platform + 1 Monthly Live Session",
     desc: "Subscribe for $20/month to get full platform course access plus 1 live coaching session every month.",
-    badgeClass: "bg-chess-green/20 text-chess-green-light border-chess-green/40",
-    checkBg: "bg-chess-green/30 text-chess-green-light border-chess-green/40",
+    checkBg: "bg-chess-green/15 text-chess-green-light border-chess-green/30",
   },
   {
     title: "Dedicated Learning & Coaching Focus",
     desc: "We focus 100% on instruction, courses, and equipment to accelerate your skill growth.",
-    badgeClass: "bg-gold/20 text-gold-light border-gold/40",
-    checkBg: "bg-gold/30 text-gold-light border-gold/40",
+    checkBg: "bg-gold/15 text-gold-light border-gold/30",
   },
   {
     title: "AI-Powered Game Analysis",
     desc: "Identify your tactical blind spots using engine evaluations and master annotations.",
-    badgeClass: "bg-tech-blue/20 text-tech-blue-light border-tech-blue/40",
-    checkBg: "bg-tech-blue/30 text-tech-blue-light border-tech-blue/40",
+    checkBg: "bg-tech-blue/15 text-tech-blue-light border-tech-blue/30",
   },
   {
     title: "Tournament Equipment",
     desc: "Weighted Staunton pieces, handcrafted wooden boards, and digital clocks built to FIDE standards.",
-    badgeClass: "bg-purple-accent/20 text-purple-light border-purple-accent/40",
-    checkBg: "bg-purple-accent/30 text-purple-light border-purple-accent/40",
+    checkBg: "bg-gold/15 text-gold-light border-gold/30",
   },
 ];
 
@@ -103,46 +99,45 @@ const stats = [
   { value: "$20/mo", label: "Self-Learning Membership", color: "text-chess-green-light" },
   { value: "500+", label: "Active Students", color: "text-gold-light" },
   { value: "15+", label: "Titled Coaches", color: "text-tech-blue-light" },
-  { value: "50+", label: "Premium Products", color: "text-purple-light" },
+  { value: "50+", label: "Premium Products", color: "text-foreground" },
 ];
 
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
       {/* ============================================
-          Hero Section — Vibrant Multi-Color Glow Flares
+          Hero Section — Refined Luxury Ambient Lighting
           ============================================ */}
       <section className="relative overflow-hidden section-padding">
-        {/* Multi-Color Ambient Background Flares */}
-        <div className="pointer-events-none absolute top-0 left-1/4 w-[600px] h-[450px] bg-chess-green/15 rounded-full blur-[100px]" />
-        <div className="pointer-events-none absolute top-10 right-1/4 w-[550px] h-[450px] bg-tech-blue/15 rounded-full blur-[100px]" />
-        <div className="pointer-events-none absolute top-40 left-1/2 -translate-x-1/2 w-[500px] h-[350px] bg-gold/15 rounded-full blur-[110px]" />
+        {/* Subtle, Soft Ambient Backdrop Flares */}
+        <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-chess-green/5 rounded-full blur-[120px]" />
+        <div className="pointer-events-none absolute top-10 right-1/3 w-[400px] h-[300px] bg-gold/5 rounded-full blur-[120px]" />
 
         <div className="relative mx-auto max-w-5xl text-center z-10">
-          {/* Vibrant Slogan Badge */}
-          <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-chess-green/50 bg-gradient-to-r from-chess-green/20 via-tech-blue/20 to-gold/20 px-5 py-2 backdrop-blur-md shadow-lg shadow-chess-green/10">
-            <span className="h-2.5 w-2.5 rounded-full bg-chess-green animate-pulse" />
-            <span className="text-xs font-extrabold uppercase tracking-widest text-gradient-brand">
+          {/* Subtle Badge */}
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-chess-green/30 bg-chess-green/10 px-4 py-1.5 backdrop-blur-sm">
+            <span className="h-2 w-2 rounded-full bg-chess-green animate-pulse" />
+            <span className="text-xs font-semibold uppercase tracking-wider text-chess-green-light">
               {SITE_SLOGAN}
             </span>
           </div>
 
-          {/* Main Headline */}
+          {/* Headline */}
           <h1 className="text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
-            Welcome to <span className="text-gradient-brand">{SITE_NAME}</span>
+            Welcome to <span className="text-gradient-gold">{SITE_NAME}</span>
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-foreground-secondary sm:text-xl">
             The premier platform for self-learning courses, live master coaching, and tournament-grade chess equipment.
           </p>
 
-          {/* Highlighted Multi-Color Banner for $20/mo */}
-          <div className="mt-8 inline-flex items-center gap-3 bg-gradient-to-r from-surface-elevated via-surface to-surface-elevated border border-chess-green/50 px-6 py-3 rounded-2xl text-sm shadow-xl shadow-chess-green/10">
-            <span className="px-3 py-1 rounded-full bg-gradient-to-r from-chess-green via-emerald-500 to-tech-blue text-black font-extrabold text-xs shadow-md">
-              POPULAR
+          {/* Highlighted Banner for $20/mo */}
+          <div className="mt-8 inline-flex items-center gap-3 bg-surface-elevated border border-border px-5 py-2.5 rounded-2xl text-sm shadow-md">
+            <span className="px-2.5 py-0.5 rounded-full bg-chess-green text-black font-extrabold text-xs">
+              MEMBERSHIP
             </span>
-            <span className="text-foreground font-semibold">
-              Self-Learning Membership: <strong className="text-gradient-green font-extrabold text-base">$20/month</strong> (Includes 1 Live Session)
+            <span className="text-foreground font-medium">
+              Self-Learning Plan: <strong className="text-chess-green-light font-bold">$20/month</strong> (Includes 1 Live Session)
             </span>
           </div>
 
@@ -162,9 +157,9 @@ export default function Home() {
       </section>
 
       {/* ============================================
-          Colorful Stats Bar
+          Stats Bar
           ============================================ */}
-      <section className="border-y border-border bg-gradient-to-r from-background-secondary via-surface to-background-secondary relative">
+      <section className="border-y border-border bg-background-secondary">
         <div className="mx-auto max-w-5xl px-6 py-10">
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
             {stats.map((stat) => (
@@ -172,7 +167,7 @@ export default function Home() {
                 <div className={`text-3xl font-extrabold sm:text-4xl ${stat.color}`}>
                   {stat.value}
                 </div>
-                <div className="mt-1 text-xs sm:text-sm text-foreground-secondary uppercase tracking-wider font-bold">
+                <div className="mt-1 text-xs sm:text-sm text-foreground-secondary uppercase tracking-wider font-semibold">
                   {stat.label}
                 </div>
               </div>
@@ -182,11 +177,9 @@ export default function Home() {
       </section>
 
       {/* ============================================
-          Services Section with Vibrant Cards
+          Services Section
           ============================================ */}
       <section className="section-padding relative">
-        <div className="pointer-events-none absolute top-1/2 left-0 w-[400px] h-[400px] bg-purple-accent/10 rounded-full blur-[100px]" />
-        
         <div className="mx-auto max-w-6xl relative z-10">
           <SectionHeading
             label="Learning Solutions"
@@ -198,10 +191,10 @@ export default function Home() {
             {services.map((s) => (
               <Card
                 key={s.title}
-                className={`p-8 text-center flex flex-col justify-between ${s.hoverGlow} ${s.isFeatured ? "border-chess-green/50 bg-gradient-to-b from-surface-elevated to-surface" : "bg-surface"}`}
+                className={`p-8 text-center flex flex-col justify-between ${s.hoverGlow} ${s.isFeatured ? "border-chess-green/40 bg-surface-elevated" : "bg-surface"}`}
               >
                 <div>
-                  <div className={`mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl text-3xl border shadow-lg ${s.iconBg}`}>
+                  <div className={`mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl text-3xl shadow-sm ${s.iconBg}`}>
                     {s.icon}
                   </div>
                   <h3 className="text-xl font-bold text-foreground">{s.title}</h3>
@@ -224,8 +217,6 @@ export default function Home() {
           Featured Store Section
           ============================================ */}
       <section className="section-padding border-t border-border bg-background-secondary relative">
-        <div className="pointer-events-none absolute bottom-0 right-0 w-[500px] h-[400px] bg-gold/10 rounded-full blur-[120px]" />
-
         <div className="mx-auto max-w-6xl relative z-10">
           <SectionHeading
             label="Featured Store"
@@ -238,20 +229,20 @@ export default function Home() {
               <Card key={p.id} className={`p-6 flex flex-col justify-between ${p.hoverGlow} bg-surface`}>
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-bold uppercase tracking-wider text-foreground-muted">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-foreground-muted">
                       {p.category}
                     </span>
-                    <span className={`text-xs px-3 py-1 rounded-full font-extrabold border ${p.badgeColor}`}>
+                    <span className={`text-xs px-2.5 py-1 rounded-full font-bold border ${p.badgeColor}`}>
                       {p.tag}
                     </span>
                   </div>
-                  <div className={`h-36 flex items-center justify-center text-6xl my-2 rounded-2xl border shadow-inner ${p.iconBg}`}>
+                  <div className={`h-36 flex items-center justify-center text-6xl my-2 rounded-2xl border ${p.iconBg}`}>
                     {p.icon}
                   </div>
                   <h3 className="text-lg font-bold mt-4 text-foreground">{p.name}</h3>
                 </div>
                 <div className="mt-6 flex items-center justify-between border-t border-border pt-4">
-                  <span className="text-xl font-extrabold text-gold-light">{p.price}</span>
+                  <span className="text-xl font-bold text-gold-light">{p.price}</span>
                   <Button href="/shop" size="sm" variant="gold">
                     View Product
                   </Button>
@@ -300,13 +291,13 @@ export default function Home() {
             </div>
 
             <div className="relative">
-              <Card glow className="p-8 text-center border-chess-green/40 relative overflow-hidden bg-gradient-to-b from-surface-elevated via-surface to-background-secondary shadow-2xl hover-glow-green">
-                <div className="text-7xl mb-4 text-gradient-brand">♚</div>
+              <Card glow className="p-8 text-center border-chess-green/30 relative overflow-hidden bg-surface hover-glow-green">
+                <div className="text-7xl mb-4 text-gradient-gold">♚</div>
                 <h3 className="text-2xl font-bold">{SITE_SLOGAN}</h3>
                 <p className="mt-3 text-sm text-foreground-secondary max-w-md mx-auto">
                   Experience self-paced learning courses paired with live 1-on-1 master instruction.
                 </p>
-                <div className="mt-8 inline-flex items-center gap-2 text-xs font-mono text-chess-green-light bg-chess-green/15 px-4 py-2.5 rounded-xl border border-chess-green/40 shadow-md">
+                <div className="mt-8 inline-flex items-center gap-2 text-xs font-mono text-chess-green-light bg-chess-green/10 px-4 py-2 rounded-xl border border-chess-green/30">
                   <span>● $20/MO MEMBERSHIP</span>
                   <span>·</span>
                   <span>1 LIVE SESSION INCLUDED</span>
@@ -318,13 +309,11 @@ export default function Home() {
       </section>
 
       {/* ============================================
-          Vibrant CTA Banner
+          CTA Banner
           ============================================ */}
-      <section className="section-padding border-t border-border bg-gradient-to-b from-background-secondary via-surface to-background relative">
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-chess-green/10 via-tech-blue/10 to-gold/10 opacity-70 blur-3xl" />
-
+      <section className="section-padding border-t border-border bg-background-secondary relative">
         <div className="mx-auto max-w-4xl relative z-10">
-          <Card glow className="p-10 sm:p-14 text-center border-chess-green/50 bg-gradient-to-b from-surface-elevated to-surface relative overflow-hidden shadow-2xl">
+          <Card glow className="p-10 sm:p-14 text-center border-chess-green/30 bg-surface relative overflow-hidden">
             <h2 className="text-3xl font-extrabold sm:text-4xl text-foreground">
               Start Your Self-Learning Plan Today
             </h2>

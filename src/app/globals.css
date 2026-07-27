@@ -2,42 +2,38 @@
 
 /* ============================================
    NXChess Design System
-   Vibrant Dark Charcoal Theme + Rich Color Accents
+   Luxury Dark Charcoal Theme + Refined Accents
    ============================================ */
 
 :root {
-  /* Chess.com Dark Charcoal Palette */
-  --background: #1d1b19;
-  --background-secondary: #262421;
-  --surface: #2d2a26;
-  --surface-hover: #38342f;
-  --surface-elevated: #44403a;
+  /* Luxury Dark Charcoal Palette */
+  --background: #181614;
+  --background-secondary: #211f1c;
+  --surface: #292622;
+  --surface-hover: #332f2b;
+  --surface-elevated: #3d3934;
 
   /* Borders */
-  --border: #403c37;
-  --border-hover: #57524b;
-  --border-accent: #81b64c;
+  --border: #38342f;
+  --border-hover: #4d4841;
+  --border-accent: #c8a55a;
 
   /* Text */
   --foreground: #ffffff;
-  --foreground-secondary: #d1cfcd;
-  --foreground-muted: #969390;
+  --foreground-secondary: #c5c2be;
+  --foreground-muted: #8c8883;
 
-  /* Vibrant Colors */
+  /* Luxury Accents */
   --chess-green: #81b64c;
   --chess-green-light: #96c85e;
   --chess-green-dark: #5d9948;
 
-  --gold: #f59e0b;
-  --gold-light: #fbbf24;
-  --gold-dark: #d97706;
+  --gold: #c8a55a;
+  --gold-light: #e5c175;
+  --gold-dark: #a88438;
 
-  --tech-blue: #06b6d4;
-  --tech-blue-light: #38bdf8;
-  --tech-blue-dark: #0284c7;
-
-  --purple-accent: #a855f7;
-  --purple-light: #c084fc;
+  --tech-blue: #38bdf8;
+  --tech-blue-light: #7dd3fc;
 
   --whatsapp: #25d366;
 }
@@ -67,10 +63,6 @@
 
   --color-tech-blue: var(--tech-blue);
   --color-tech-blue-light: var(--tech-blue-light);
-  --color-tech-blue-dark: var(--tech-blue-dark);
-
-  --color-purple-accent: var(--purple-accent);
-  --color-purple-light: var(--purple-light);
 
   --color-whatsapp: var(--whatsapp);
 
@@ -95,92 +87,74 @@ html {
 }
 
 /* ============================================
-   Rich Vibrant Gradients & Effects
+   Refined Luxury Gradients & Subtle Glows
    ============================================ */
 
 /* Emerald Green Gradient Text */
 .text-gradient-green {
-  background: linear-gradient(135deg, #a3d160 0%, #81b64c 50%, #34d399 100%);
+  background: linear-gradient(135deg, #a3d160 0%, #81b64c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Rich Gold & Amber Gradient Text */
+/* Elegant Gold Gradient Text */
 .text-gradient-gold {
-  background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
+  background: linear-gradient(135deg, #e5c175 0%, #c8a55a 50%, #a88438 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Electric Cyan/Blue Gradient Text */
+/* Tech Cyan Gradient Text */
 .text-gradient-tech {
-  background: linear-gradient(135deg, #a5f3fc 0%, #38bdf8 50%, #818cf8 100%);
+  background: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Multi-color Brand Gradient Text */
+/* Refined Luxury Brand Gradient Text */
 .text-gradient-brand {
-  background: linear-gradient(135deg, #96c85e 0%, #fbbf24 35%, #38bdf8 70%, #c084fc 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #e5c175 40%, #96c85e 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Glowing Border Utilities */
-.border-gradient-green {
-  border-image: linear-gradient(135deg, #81b64c, #34d399) 1;
-}
-
-.border-gradient-gold {
-  border-image: linear-gradient(135deg, #fbbf24, #f59e0b) 1;
-}
-
-/* Colorful Card Hover Glows */
+/* Subtle, Refined Hover Effects (No Heavy Blurs) */
 .hover-glow-green {
-  transition: all 0.25s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .hover-glow-green:hover {
-  box-shadow: 0 10px 30px -10px rgba(129, 182, 76, 0.35), 0 0 15px rgba(52, 211, 153, 0.2);
-  border-color: rgba(129, 182, 76, 0.6);
-  transform: translateY(-3px);
+  border-color: rgba(129, 182, 76, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 10px rgba(129, 182, 76, 0.1);
+  transform: translateY(-2px);
 }
 
 .hover-glow-gold {
-  transition: all 0.25s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .hover-glow-gold:hover {
-  box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.35), 0 0 15px rgba(251, 191, 36, 0.2);
-  border-color: rgba(245, 158, 11, 0.6);
-  transform: translateY(-3px);
+  border-color: rgba(200, 165, 90, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 10px rgba(200, 165, 90, 0.1);
+  transform: translateY(-2px);
 }
 
 .hover-glow-tech {
-  transition: all 0.25s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .hover-glow-tech:hover {
-  box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.35), 0 0 15px rgba(6, 182, 212, 0.2);
-  border-color: rgba(56, 189, 248, 0.6);
-  transform: translateY(-3px);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 10px rgba(56, 189, 248, 0.1);
+  transform: translateY(-2px);
 }
 
-.hover-glow-purple {
-  transition: all 0.25s ease-in-out;
-}
-.hover-glow-purple:hover {
-  box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.35), 0 0 15px rgba(192, 132, 252, 0.2);
-  border-color: rgba(168, 85, 247, 0.6);
-  transform: translateY(-3px);
-}
-
-/* Glass effect */
+/* Subtle Glass Effect */
 .glass {
-  background: rgba(45, 42, 38, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(41, 38, 34, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
 }
 
