@@ -10,7 +10,7 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "coaching",
+    subject: "kids",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -27,21 +27,21 @@ export default function ContactPage() {
   }
 
   return (
-    <main>
+    <main className="overflow-x-hidden">
       {/* Hero */}
       <section className="relative section-padding overflow-hidden">
-        <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-gold/5 rounded-full blur-3xl" />
-        <div className="relative mx-auto max-w-4xl text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-tech-blue/30 bg-tech-blue/10 px-4 py-2">
-            <span className="text-xs font-semibold text-tech-blue-light uppercase tracking-wider">
-              ✉ DIRECT COMMUNICATION
+        <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-chess-green/10 rounded-full blur-3xl" />
+        <div className="relative mx-auto max-w-4xl text-center z-10">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-chess-green/30 bg-chess-green/10 px-4 py-2">
+            <span className="text-xs font-semibold text-chess-green-light uppercase tracking-wider">
+              ✉ GET IN TOUCH
             </span>
           </div>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
             Contact <span className="text-gradient-gold">{SITE_NAME}</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-foreground-secondary">
-            Have questions about Kids Lessons, Private Coaching, School Programs, or Products? Reach out to us below or text us directly on WhatsApp.
+            Inquire about our 8-Level Piece Curriculum, $20/mo Self-Learning plan, Kids Lessons ($350), Private Coaching ($650), or Holiday Camps.
           </p>
         </div>
       </section>
@@ -60,7 +60,7 @@ export default function ContactPage() {
                 </span>
                 <h3 className="text-xl font-bold text-foreground">Chat with Us on WhatsApp</h3>
                 <p className="text-sm text-foreground-secondary mt-1">
-                  Direct instant messaging with our coaching advisors and support team.
+                  Direct instant messaging with our academy advisors and coaching team.
                 </p>
               </div>
             </div>
@@ -79,68 +79,45 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Methods Cards */}
+      {/* Locations & Channels */}
       <section className="section-padding">
         <div className="mx-auto max-w-5xl">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 mb-16">
-            <Card className="p-6 text-center">
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10 text-gold text-2xl">
-                ✉
-              </div>
-              <h3 className="font-bold">Email Support</h3>
-              <p className="text-xs text-foreground-secondary mt-1">24/7 inbox response</p>
-              <a
-                href={`mailto:${CONTACT_INFO.email}`}
-                className="mt-3 inline-block text-sm font-semibold text-gold hover:text-gold-light"
-              >
-                {CONTACT_INFO.email}
-              </a>
-            </Card>
+          <SectionHeading
+            label="Locations & Channels"
+            title="Where To Find Us"
+            subtitle="Visit our academy branches or join our global online classroom."
+          />
 
-            <Card className="p-6 text-center">
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-whatsapp/10 text-whatsapp text-2xl">
-                📞
-              </div>
-              <h3 className="font-bold">Phone & WhatsApp</h3>
-              <p className="text-xs text-foreground-secondary mt-1">Mon - Sat (9am - 8pm)</p>
-              <a
-                href={SOCIAL_LINKS.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 inline-block text-sm font-semibold text-whatsapp hover:brightness-110"
-              >
-                {CONTACT_INFO.phone}
-              </a>
-            </Card>
-
-            <Card className="p-6 text-center">
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-tech-blue/10 text-tech-blue-light text-2xl">
-                🌐
-              </div>
-              <h3 className="font-bold">Global Platform</h3>
-              <p className="text-xs text-foreground-secondary mt-1">Online worldwide sessions</p>
-              <p className="mt-3 text-sm font-semibold text-tech-blue-light">
-                {CONTACT_INFO.address}
-              </p>
-            </Card>
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3 mb-16">
+            {CONTACT_INFO.locations.map((loc) => (
+              <Card key={loc.city} className="p-6 text-center hover-glow-gold">
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10 text-gold text-2xl">
+                  📍
+                </div>
+                <h3 className="font-bold text-foreground">{loc.city}</h3>
+                <p className="text-xs text-foreground-secondary mt-2 leading-relaxed">
+                  {loc.detail}
+                </p>
+              </Card>
+            ))}
           </div>
 
           {/* Form Layout */}
           <SectionHeading
             label="Send Message"
             title="Online Inquiry Form"
-            subtitle="Fill in your details and our team will get back to you within 24 hours."
+            subtitle="Fill in your details and our academy team will respond within 24 hours."
           />
 
           <div className="mt-12 max-w-2xl mx-auto">
             {submitted ? (
-              <Card glow className="p-10 text-center border-gold/30">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gold/10 text-gold text-3xl">
+              <Card glow className="p-10 text-center border-chess-green/30">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-chess-green/10 text-chess-green-light text-3xl">
                   ✓
                 </div>
                 <h3 className="text-2xl font-bold">Thank You!</h3>
                 <p className="mt-2 text-foreground-secondary">
-                  Your message has been received. We will get in touch with you shortly.
+                  Your inquiry has been received. Our team will contact you shortly.
                 </p>
                 <Button
                   onClick={() => setSubmitted(false)}
@@ -165,7 +142,7 @@ export default function ContactPage() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-colors"
+                        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-chess-green focus:ring-1 focus:ring-chess-green/30 transition-colors"
                         placeholder="John Doe"
                       />
                     </div>
@@ -181,7 +158,7 @@ export default function ContactPage() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-colors"
+                        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-chess-green focus:ring-1 focus:ring-chess-green/30 transition-colors"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -189,20 +166,21 @@ export default function ContactPage() {
 
                   <div>
                     <label htmlFor="subject" className="block text-xs font-semibold text-foreground-secondary uppercase tracking-wider mb-2">
-                      Inquiry Type *
+                      Inquiry Topic *
                     </label>
                     <select
                       id="subject"
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-colors"
+                      className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-chess-green focus:ring-1 focus:ring-chess-green/30 transition-colors"
                     >
-                      <option value="kids">Kids Chess Lessons</option>
-                      <option value="private">Private 1-on-1 Coaching</option>
+                      <option value="self-learning">Self-Learning Membership ($20/mo)</option>
+                      <option value="kids">Kids Chess Lessons ($350)</option>
+                      <option value="private">Private 1-on-1 Coaching ($650)</option>
+                      <option value="camp">Holiday & Summer Chess Camp</option>
                       <option value="school">School & Academy Program</option>
-                      <option value="shop">Chess Shop & Products Inquiry</option>
-                      <option value="other">General Inquiry</option>
+                      <option value="shop">Chess Equipment Inquiry</option>
                     </select>
                   </div>
 
@@ -217,8 +195,8 @@ export default function ContactPage() {
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-colors resize-none"
-                      placeholder="Tell us about your goals or questions..."
+                      className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-chess-green focus:ring-1 focus:ring-chess-green/30 transition-colors resize-none"
+                      placeholder="Tell us about your student's goals..."
                     />
                   </div>
 

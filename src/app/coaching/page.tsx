@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import SectionHeading from "@/components/ui/SectionHeading";
+import { CURRICULUM_LEVELS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Coaching & Learning Plans",
   description:
-    "Explore NXChess learning plans: $20/mo Self-Learning Membership with 1 monthly live session, Kids Lessons ($350), Private Coaching ($650), and School Programs.",
+    "Explore NXChess 8-level piece curriculum, $20/mo Self-Learning Membership, Kids Lessons ($350), Private Coaching ($650), and Intensive Chess Camps.",
 };
 
 const learningPlans = [
@@ -78,16 +79,19 @@ const learningPlans = [
   },
 ];
 
-const schoolProgram = {
-  title: "School & Institutional Programs",
+const chessCamp = {
+  title: "Intensive Holiday & Summer Chess Camp",
+  subtitle: "Master-Led Training Camps",
+  badge: "Exclusive Master Workshop",
   description:
-    "Complete after-school chess curriculum, club management, and tournament organization for public & private schools.",
-  features: [
-    "Turnkey curriculum & lesson plans for teachers",
-    "Certified master instructors provided",
-    "In-school tournament organization & equipment",
-    "Inter-school chess league representation",
+    "An intensive 2-week training camp led by Super Grandmasters focused on opening novelties, middlegame calculation, positional sacrifices, and simultaneous exhibition games.",
+  highlights: [
+    "Daily GM lectures & tactical puzzle sprints",
+    "Simultaneous games against Grandmasters",
+    "Signed completion certificate & trophy distribution",
+    "Small group size (max 10 students per master)",
   ],
+  cta: "Reserve Camp Spot",
 };
 
 const coaches = [
@@ -95,6 +99,8 @@ const coaches = [
     name: "GM Alexander Petrov",
     title: "Head Coach",
     rating: "2580 FIDE",
+    trait: "Resilient & Strategic",
+    funFact: "Enthusiastic endgame researcher",
     specialty: "Positional Mastery & Strategy",
     bio: "Former national champion with 20+ years of coaching experience. Has trained top grandmasters and youth prodigies.",
     icon: "♔",
@@ -105,6 +111,8 @@ const coaches = [
     title: "Senior Master Coach",
     rating: "2410 FIDE",
     specialty: "Tactics & Opening Preparation",
+    trait: "Creative & Fast-Paced",
+    funFact: "Loves tactical sacrifices and blitz analysis",
     bio: "International Master and certified educator known for creative tactical training methods and opening analysis.",
     icon: "♕",
     color: "text-chess-green-light bg-chess-green/15 border-chess-green/30",
@@ -114,6 +122,8 @@ const coaches = [
     title: "Youth Program Director",
     rating: "2320 FIDE",
     specialty: "Kids Development & Fundamentals",
+    trait: "Patient & Inspiring",
+    funFact: "Has coached over 300 youth tournament medalists",
     bio: "Dedicated youth coach who has introduced over 300 children to competitive chess and state championships.",
     icon: "♗",
     color: "text-tech-blue-light bg-tech-blue/15 border-tech-blue/30",
@@ -121,6 +131,11 @@ const coaches = [
 ];
 
 const faqs = [
+  {
+    question: "How do students progress through the 8 Curriculum Levels?",
+    answer:
+      "Students start with a diagnostic session and are placed in the appropriate level (from Level 1 Pawn to Level 8 King). Progress is tracked via module evaluations and periodic performance reports.",
+  },
   {
     question: "Is there online match playing on NXChess?",
     answer:
@@ -130,11 +145,6 @@ const faqs = [
     question: "What is included in the $20/month Self-Learning Membership?",
     answer:
       "For $20/month, you get complete access to our digital self-learning course library, interactive tactical modules, study roadmaps, AND 1 live 1-on-1 coaching session with a master instructor every month!",
-  },
-  {
-    question: "How do the live coaching sessions work?",
-    answer:
-      "Live sessions are conducted via video call using our interactive digital chess board tools. You analyze games, receive direct feedback, and get personalized homework.",
   },
 ];
 
@@ -149,14 +159,14 @@ export default function CoachingPage() {
         <div className="relative mx-auto max-w-4xl text-center z-10">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-chess-green/40 bg-chess-green/15 px-4 py-2 backdrop-blur-md">
             <span className="text-xs font-extrabold text-chess-green-light uppercase tracking-wider">
-              ♟ SELF-LEARNING & COACHING PLANS
+              ♟ ACADEMY PROGRAMS & CURRICULUM
             </span>
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
             NXChess <span className="text-gradient-brand">Learning & Coaching</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-foreground-secondary leading-relaxed">
-            Master the game through self-paced digital courses and live 1-on-1 master coaching.
+            Structured 8-level piece curriculum, self-paced digital learning, master coaching, and intensive holiday camps.
           </p>
         </div>
       </section>
@@ -232,58 +242,98 @@ export default function CoachingPage() {
         </div>
       </section>
 
-      {/* School Program Banner */}
+      {/* 8-Level Piece Curriculum Breakdown */}
       <section className="section-padding relative">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            label="Step-by-Step System"
+            title="The 8-Level Piece Curriculum Framework"
+            subtitle="Students progress sequentially through piece-themed modules with regular evaluations and activity-based learning."
+          />
+
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {CURRICULUM_LEVELS.map((lvl) => (
+              <Card key={lvl.level} className="p-6 bg-surface hover-glow-gold flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs font-extrabold text-chess-green-light">
+                      LEVEL {lvl.level}
+                    </span>
+                    <span className="text-2xl">{lvl.icon}</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground">{lvl.name}</h3>
+                  <h4 className="text-xs font-semibold text-gold-light mt-1">{lvl.title}</h4>
+                  <p className="text-xs text-foreground-secondary mt-3 leading-relaxed">
+                    {lvl.desc}
+                  </p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Seasonal Chess Camp Section */}
+      <section className="section-padding border-t border-border bg-background-secondary relative">
         <div className="mx-auto max-w-5xl">
-          <Card className="p-10 border-tech-blue/40 bg-gradient-to-r from-surface-elevated to-surface flex flex-col md:flex-row items-center justify-between gap-8 hover-glow-tech">
+          <Card className="p-10 border-gold/40 bg-surface flex flex-col lg:flex-row items-center justify-between gap-8 hover-glow-gold">
             <div>
-              <div className="inline-block text-xs font-bold uppercase tracking-wider text-tech-blue-light bg-tech-blue/15 px-3 py-1 rounded-full border border-tech-blue/40 mb-3">
-                🏫 School & Academy Solution
+              <div className="inline-block text-xs font-bold uppercase tracking-wider text-gold-light bg-gold/15 px-3 py-1 rounded-full border border-gold/30 mb-3">
+                🏆 {chessCamp.badge}
               </div>
-              <h3 className="text-2xl font-bold text-foreground">{schoolProgram.title}</h3>
-              <p className="text-sm text-foreground-secondary mt-2 max-w-xl">
-                {schoolProgram.description}
+              <h3 className="text-3xl font-extrabold text-foreground">{chessCamp.title}</h3>
+              <p className="text-sm text-foreground-secondary mt-3 max-w-xl leading-relaxed">
+                {chessCamp.description}
               </p>
               <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-foreground-secondary">
-                {schoolProgram.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2">
-                    <span className="text-tech-blue-light font-bold">✓</span> {f}
+                {chessCamp.highlights.map((h) => (
+                  <li key={h} className="flex items-center gap-2">
+                    <span className="text-gold-light font-bold">✓</span> {h}
                   </li>
                 ))}
               </ul>
             </div>
-            <Button href="/contact" variant="tech" size="lg" className="shrink-0">
-              Inquire for Schools
+            <Button href="/contact" variant="gold" size="lg" className="shrink-0">
+              {chessCamp.cta}
             </Button>
           </Card>
         </div>
       </section>
 
-      {/* Coaches Section */}
-      <section className="section-padding border-t border-border bg-background-secondary">
+      {/* Coaches Section with Traits & Fun Facts */}
+      <section className="section-padding">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
-            label="Master Coaches"
+            label="Meet The Team"
             title="Learn From Tilted Professionals"
-            subtitle="Our coaches guide live sessions and craft our digital self-learning curriculum."
+            subtitle="Our coaches bring international experience, patience, and proven teaching methods."
           />
 
           <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
             {coaches.map((c) => (
-              <Card key={c.name} className="p-8 hover-glow-green bg-surface">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className={`flex h-14 w-14 items-center justify-center rounded-2xl border text-3xl shadow-md ${c.color}`}>
-                    {c.icon}
+              <Card key={c.name} className="p-8 hover-glow-green bg-surface flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className={`flex h-14 w-14 items-center justify-center rounded-2xl border text-3xl shadow-md ${c.color}`}>
+                      {c.icon}
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg text-foreground">{c.name}</h3>
+                      <p className="text-xs text-chess-green-light font-bold">{c.title} · {c.rating}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-lg text-foreground">{c.name}</h3>
-                    <p className="text-xs text-chess-green-light font-bold">{c.title} · {c.rating}</p>
+                  <div className="my-3 space-y-1">
+                    <div className="text-xs text-foreground font-semibold">
+                      Style: <span className="text-gold-light">{c.trait}</span>
+                    </div>
+                    <div className="text-xs text-foreground-muted">
+                      Fun Fact: <span className="text-foreground-secondary">{c.funFact}</span>
+                    </div>
                   </div>
+                  <p className="text-sm leading-relaxed text-foreground-secondary border-t border-border pt-3">
+                    {c.bio}
+                  </p>
                 </div>
-                <p className="text-xs text-foreground-muted font-semibold mb-3">Specialty: {c.specialty}</p>
-                <p className="text-sm leading-relaxed text-foreground-secondary">
-                  {c.bio}
-                </p>
               </Card>
             ))}
           </div>
@@ -291,7 +341,7 @@ export default function CoachingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="section-padding">
+      <section className="section-padding border-t border-border bg-background-secondary">
         <div className="mx-auto max-w-3xl">
           <SectionHeading
             label="FAQ"

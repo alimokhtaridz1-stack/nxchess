@@ -1,7 +1,7 @@
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { SITE_NAME, SITE_SLOGAN } from "@/lib/constants";
+import { SITE_NAME, SITE_SLOGAN, CHESS_BENEFITS, CURRICULUM_LEVELS } from "@/lib/constants";
 
 const featuredProducts = [
   {
@@ -39,82 +39,46 @@ const featuredProducts = [
   },
 ];
 
-const services = [
+const testimonials = [
   {
-    icon: "📚",
-    title: "Self-Learning Membership ($20/mo)",
-    description:
-      "Interactive digital self-learning course access paired with 1 monthly live 1-on-1 coaching session.",
-    href: "/coaching",
-    isFeatured: true,
-    hoverGlow: "hover-glow-green",
-    iconBg: "bg-chess-green/10 text-chess-green-light border border-chess-green/30",
+    quote: "My 9-year-old son joined the Pawn level and reached Knight level in 3 months. His focus at school and calculation in games improved tremendously!",
+    author: "Sarah M.",
+    role: "Parent of Academy Student",
+    rating: "★★★★★",
   },
   {
-    icon: "♟",
-    title: "Kids & Youth Coaching ($350)",
-    description:
-      "Fun, structured chess lessons designed for children to build logic, focus, and youth tournament strategy.",
-    href: "/coaching",
-    isFeatured: false,
-    hoverGlow: "hover-glow-gold",
-    iconBg: "bg-gold/10 text-gold-light border border-gold/30",
+    quote: "The Grandmaster coaches are patient and friendly. The periodic progress reports keep us updated on exact ratings and tactical module completion.",
+    author: "David K.",
+    role: "Private Student Parent",
+    rating: "★★★★★",
   },
   {
-    icon: "♚",
-    title: "Private 1-on-1 Coaching ($650)",
-    description:
-      "Personalized instruction with titled masters customized to your opening repertoire, tactics, and endgames.",
-    href: "/coaching",
-    isFeatured: false,
-    hoverGlow: "hover-glow-tech",
-    iconBg: "bg-tech-blue/10 text-tech-blue-light border border-tech-blue/30",
-  },
-];
-
-const whyReasons = [
-  {
-    title: "Self-Paced Platform + 1 Monthly Live Session",
-    desc: "Subscribe for $20/month to get full platform course access plus 1 live coaching session every month.",
-    checkBg: "bg-chess-green/15 text-chess-green-light border-chess-green/30",
-  },
-  {
-    title: "Dedicated Learning & Coaching Focus",
-    desc: "We focus 100% on instruction, courses, and equipment to accelerate your skill growth.",
-    checkBg: "bg-gold/15 text-gold-light border-gold/30",
-  },
-  {
-    title: "AI-Powered Game Analysis",
-    desc: "Identify your tactical blind spots using engine evaluations and master annotations.",
-    checkBg: "bg-tech-blue/15 text-tech-blue-light border-tech-blue/30",
-  },
-  {
-    title: "Tournament Equipment",
-    desc: "Weighted Staunton pieces, handcrafted wooden boards, and digital clocks built to FIDE standards.",
-    checkBg: "bg-gold/15 text-gold-light border-gold/30",
+    quote: "The combination of the $20/mo platform and monthly live sessions is unmatched. Best investment for serious chess improvement.",
+    author: "Alexander R.",
+    role: "Adult Club Player",
+    rating: "★★★★★",
   },
 ];
 
 const stats = [
-  { value: "$20/mo", label: "Self-Learning Membership", color: "text-chess-green-light" },
-  { value: "500+", label: "Active Students", color: "text-gold-light" },
-  { value: "15+", label: "Titled Coaches", color: "text-tech-blue-light" },
-  { value: "50+", label: "Premium Products", color: "text-foreground" },
+  { value: "4.9 ★", label: "Parent & Student Rating" },
+  { value: "$20/mo", label: "Self-Learning Membership" },
+  { value: "8 Levels", label: "Pawn to King Curriculum" },
+  { value: "15+", label: "Master Coaches" },
 ];
 
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
       {/* ============================================
-          Hero Section — Refined Luxury Ambient Lighting
+          Hero Section
           ============================================ */}
       <section className="relative overflow-hidden section-padding">
-        {/* Subtle, Soft Ambient Backdrop Flares */}
         <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-chess-green/5 rounded-full blur-[120px]" />
         <div className="pointer-events-none absolute top-10 right-1/3 w-[400px] h-[300px] bg-gold/5 rounded-full blur-[120px]" />
 
         <div className="relative mx-auto max-w-5xl text-center z-10">
-          {/* Subtle Badge */}
+          {/* Badge */}
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-chess-green/30 bg-chess-green/10 px-4 py-1.5 backdrop-blur-sm">
             <span className="h-2 w-2 rounded-full bg-chess-green animate-pulse" />
             <span className="text-xs font-semibold uppercase tracking-wider text-chess-green-light">
@@ -128,23 +92,23 @@ export default function Home() {
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-foreground-secondary sm:text-xl">
-            The premier platform for self-learning courses, live master coaching, and tournament-grade chess equipment.
+            Premier chess academy combining structured 8-level piece curriculum, master coaching, self-learning digital modules, and tournament equipment.
           </p>
 
-          {/* Highlighted Banner for $20/mo */}
-          <div className="mt-8 inline-flex items-center gap-3 bg-surface-elevated border border-border px-5 py-2.5 rounded-2xl text-sm shadow-md">
+          {/* Highlighted Banner */}
+          <div className="mt-8 inline-flex flex-wrap items-center justify-center gap-3 bg-surface-elevated border border-border px-5 py-2.5 rounded-2xl text-sm shadow-md">
             <span className="px-2.5 py-0.5 rounded-full bg-chess-green text-black font-extrabold text-xs">
-              MEMBERSHIP
+              ACADEMY MEMBERSHIP
             </span>
             <span className="text-foreground font-medium">
-              Self-Learning Plan: <strong className="text-chess-green-light font-bold">$20/month</strong> (Includes 1 Live Session)
+              Self-Learning Plan: <strong className="text-chess-green-light font-bold">$20/month</strong> (Includes 1 Monthly Live Session)
             </span>
           </div>
 
-          {/* Call to Action Buttons */}
+          {/* CTAs */}
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Button href="/coaching" size="lg" variant="primary">
-              <span>📚 Explore Self-Learning & Plans</span>
+              <span>📚 Explore Coaching & Curriculum</span>
             </Button>
             <Button href="/shop" variant="gold" size="lg">
               <span>🛒 Browse Shop</span>
@@ -164,7 +128,7 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className={`text-3xl font-extrabold sm:text-4xl ${stat.color}`}>
+                <div className="text-3xl font-extrabold text-gold-light sm:text-4xl">
                   {stat.value}
                 </div>
                 <div className="mt-1 text-xs sm:text-sm text-foreground-secondary uppercase tracking-wider font-semibold">
@@ -177,35 +141,94 @@ export default function Home() {
       </section>
 
       {/* ============================================
-          Services Section
+          8-Level Progressive Curriculum Overview
           ============================================ */}
       <section className="section-padding relative">
         <div className="mx-auto max-w-6xl relative z-10">
           <SectionHeading
-            label="Learning Solutions"
-            title="Self-Paced Courses & Master Coaching"
-            subtitle="Start with our $20/mo Self-Learning plan or enroll in specialized coaching."
+            label="Structured Curriculum"
+            title="8-Level Piece Learning Framework"
+            subtitle="From Pawn to King — a step-by-step progressive roadmap designed by Grandmasters for maximum skill development."
           />
 
-          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {services.map((s) => (
+          <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
+            {CURRICULUM_LEVELS.map((lvl) => (
               <Card
-                key={s.title}
-                className={`p-8 text-center flex flex-col justify-between ${s.hoverGlow} ${s.isFeatured ? "border-chess-green/40 bg-surface-elevated" : "bg-surface"}`}
+                key={lvl.level}
+                className="p-4 text-center bg-surface hover-glow-green border-border flex flex-col justify-between"
               >
                 <div>
-                  <div className={`mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl text-3xl shadow-sm ${s.iconBg}`}>
-                    {s.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground">{s.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-foreground-secondary">
-                    {s.description}
+                  <span className="text-xs font-bold text-chess-green-light block mb-1">
+                    Lvl {lvl.level}
+                  </span>
+                  <div className="text-3xl my-2 text-gold-light">{lvl.icon}</div>
+                  <h4 className="text-sm font-bold text-foreground">{lvl.name}</h4>
+                  <p className="text-[11px] text-foreground-secondary mt-1 line-clamp-2">
+                    {lvl.title}
                   </p>
                 </div>
-                <div className="mt-8">
-                  <Button href={s.href} variant={s.isFeatured ? "primary" : "outline"} size="sm">
-                    Learn More →
-                  </Button>
+              </Card>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Button href="/coaching" variant="outline" size="sm">
+              View Full 8-Level Curriculum Details →
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
+          Benefits of Chess (Brain Development)
+          ============================================ */}
+      <section className="section-padding border-t border-border bg-background-secondary">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            label="Why Learn Chess"
+            title="Cognitive & Life Skill Benefits"
+            subtitle="Chess is more than a game — it trains the mind for academic, strategic, and personal success."
+          />
+
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {CHESS_BENEFITS.map((benefit) => (
+              <Card key={benefit.title} className="p-6 bg-surface hover-glow-gold">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-3xl">{benefit.icon}</span>
+                  <h3 className="text-lg font-bold text-foreground">{benefit.title}</h3>
+                </div>
+                <p className="text-sm leading-relaxed text-foreground-secondary">
+                  {benefit.desc}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
+          Social Proof & Parent Testimonials
+          ============================================ */}
+      <section className="section-padding">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            label="Social Proof"
+            title="Trusted by Parents & Students"
+            subtitle="Rated 4.9/5 stars for teaching excellence, student progress, and master coaching."
+          />
+
+          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {testimonials.map((t) => (
+              <Card key={t.author} className="p-6 bg-surface flex flex-col justify-between hover:border-gold/40">
+                <div>
+                  <div className="text-gold text-sm font-bold mb-3">{t.rating}</div>
+                  <p className="text-sm italic leading-relaxed text-foreground-secondary">
+                    &quot;{t.quote}&quot;
+                  </p>
+                </div>
+                <div className="mt-6 border-t border-border pt-4">
+                  <h4 className="text-sm font-bold text-foreground">{t.author}</h4>
+                  <span className="text-xs text-foreground-muted">{t.role}</span>
                 </div>
               </Card>
             ))}
@@ -214,7 +237,7 @@ export default function Home() {
       </section>
 
       {/* ============================================
-          Featured Store Section
+          Featured Store
           ============================================ */}
       <section className="section-padding border-t border-border bg-background-secondary relative">
         <div className="mx-auto max-w-6xl relative z-10">
@@ -250,61 +273,6 @@ export default function Home() {
               </Card>
             ))}
           </div>
-
-          <div className="mt-12 text-center">
-            <Button href="/shop" variant="secondary" size="md">
-              View All Products in Shop →
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================
-          Why NXChess Section
-          ============================================ */}
-      <section className="section-padding relative">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-            <div>
-              <SectionHeading
-                label="Why NXChess"
-                title="Chess Mastered for the Modern Era"
-                align="left"
-              />
-              <div className="mt-8 space-y-6">
-                {whyReasons.map((reason) => (
-                  <div key={reason.title} className="flex gap-4">
-                    <div className={`mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-xl text-xs font-bold border ${reason.checkBg}`}>
-                      ✓
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-foreground flex items-center gap-2">
-                        {reason.title}
-                      </h4>
-                      <p className="mt-1 text-sm leading-relaxed text-foreground-secondary">
-                        {reason.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative">
-              <Card glow className="p-8 text-center border-chess-green/30 relative overflow-hidden bg-surface hover-glow-green">
-                <div className="text-7xl mb-4 text-gradient-gold">♚</div>
-                <h3 className="text-2xl font-bold">{SITE_SLOGAN}</h3>
-                <p className="mt-3 text-sm text-foreground-secondary max-w-md mx-auto">
-                  Experience self-paced learning courses paired with live 1-on-1 master instruction.
-                </p>
-                <div className="mt-8 inline-flex items-center gap-2 text-xs font-mono text-chess-green-light bg-chess-green/10 px-4 py-2 rounded-xl border border-chess-green/30">
-                  <span>● $20/MO MEMBERSHIP</span>
-                  <span>·</span>
-                  <span>1 LIVE SESSION INCLUDED</span>
-                </div>
-              </Card>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -315,7 +283,7 @@ export default function Home() {
         <div className="mx-auto max-w-4xl relative z-10">
           <Card glow className="p-10 sm:p-14 text-center border-chess-green/30 bg-surface relative overflow-hidden">
             <h2 className="text-3xl font-extrabold sm:text-4xl text-foreground">
-              Start Your Self-Learning Plan Today
+              Start Your Chess Journey Today
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-foreground-secondary">
               Join for $20/month to get complete digital course access and 1 live coaching session every month.
