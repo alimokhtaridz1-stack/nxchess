@@ -11,6 +11,23 @@ Format:
 - Why / context
 ```
 
+## [2026-07-27] Lead Architect / Agent 1 & 3 — $20/mo Self-Learning Plan & Positioning Clarification
+
+**Summary**: Added the $20/month Self-Learning Membership tier (which includes full digital course platform access + 1 live 1-on-1 coaching session per month). Clarified site positioning that NXChess focuses on self-learning, master coaching, and equipment rather than hosting online match playing.
+
+### What was done
+
+- [x] **Self-Learning Plan ($20/mo)**:
+  - Added Self-Learning Membership ($20/month) as the featured top tier on `/coaching`.
+  - Includes full access to interactive courses, tactical module library, AND **1 live 1-on-1 master coaching session per month**.
+  - Featured banner and call-to-action on the Home page (`/`).
+- [x] **Platform Positioning Clarification**:
+  - Explicitly clarified in FAQs and descriptions that NXChess does not host public match playing; it is dedicated to learning, coaching, and equipment.
+- [x] **Build Verification**:
+  - `npm run build`: ✅ Prerendered 8 static routes with 0 errors.
+
+---
+
 ## [2026-07-27] Agent 1 (Frontend Designer) — Chess.com Palette Redesign & V1 Requirements
 
 **Summary**: Upgraded the design system to a Chess.com-inspired dark charcoal (`#262421`) theme with vibrant Chess.com green (`#81b64c`) CTA buttons, gold accents, and electric tech blue accents (`#38bdf8`). Implemented the About Page (`/about`), WhatsApp direct chat integration, and updated all content to highlight the brand slogan "The Next Generation of Chess".

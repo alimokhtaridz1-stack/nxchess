@@ -4,13 +4,13 @@
 export const SITE_NAME = "NXChess";
 export const SITE_SLOGAN = "The Next Generation of Chess";
 export const SITE_DESCRIPTION =
-  "The Next Generation of Chess. Combining world-class coaching, premium equipment, and cutting-edge technology.";
+  "The Next Generation of Chess Learning. Combining self-paced digital courses, 1-on-1 expert coaching, and premium equipment.";
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://nxchess.com";
 
 // Navigation Links
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Coaching", href: "/coaching" },
+  { label: "Coaching & Plans", href: "/coaching" },
   { label: "Shop", href: "/shop" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },

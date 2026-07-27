@@ -35,55 +35,58 @@ const featuredProducts = [
 
 const services = [
   {
+    icon: "📚",
+    title: "Self-Learning Membership ($20/mo)",
+    description:
+      "Interactive digital self-learning course access paired with 1 monthly live 1-on-1 coaching session.",
+    href: "/coaching",
+    isFeatured: true,
+  },
+  {
     icon: "♟",
     title: "Kids & Youth Coaching",
     description:
-      "Fun, structured chess lessons designed specifically for children to develop logic, patience, and concentration.",
+      "Fun, structured chess lessons designed for children to build logic, focus, and youth tournament strategy.",
     href: "/coaching",
+    isFeatured: false,
   },
   {
     icon: "♚",
     title: "Private 1-on-1 Coaching",
     description:
-      "Personalized instruction with titled masters customized to your opening repertoire, middlegame tactics, and endgames.",
+      "Personalized instruction with titled masters customized to your opening repertoire, tactics, and endgames.",
     href: "/coaching",
-  },
-  {
-    icon: "🏫",
-    title: "School Programs",
-    description:
-      "Turnkey chess curriculum, club management, and tournament organization for schools and institutions.",
-    href: "/coaching",
+    isFeatured: false,
   },
 ];
 
 const whyReasons = [
   {
-    title: "AI-Powered Analysis",
-    desc: "Combine grandmaster intuition with computer engine precision to spot your tactical mistakes.",
+    title: "Self-Paced Platform + 1 Monthly Live Session",
+    desc: "Subscribe for $20/month to get full platform course access plus 1 live coaching session every month.",
     isTech: true,
   },
   {
-    title: "Personalized Training",
-    desc: "Custom learning roadmaps crafted for your rating goals, whether 1000 Elo or 2200 Elo.",
+    title: "Dedicated Learning & Coaching Focus",
+    desc: "We focus 100% on instruction, courses, and equipment to accelerate your skill growth.",
     isTech: false,
   },
   {
-    title: "Tournament Gear",
-    desc: "Weighted pieces, handcrafted wooden boards, and digital timers built to FIDE standards.",
-    isTech: false,
-  },
-  {
-    title: "Global Community",
-    desc: "Connect with players worldwide, participate in interactive events, and track your rating progress.",
+    title: "AI-Powered Game Analysis",
+    desc: "Identify your tactical blind spots using engine evaluations and master annotations.",
     isTech: true,
+  },
+  {
+    title: "Tournament Equipment",
+    desc: "Weighted Staunton pieces, handcrafted wooden boards, and digital clocks built to FIDE standards.",
+    isTech: false,
   },
 ];
 
 const stats = [
+  { value: "$20/mo", label: "Self-Learning Membership" },
   { value: "500+", label: "Active Students" },
   { value: "15+", label: "Titled Coaches" },
-  { value: "98%", label: "Satisfaction Rate" },
   { value: "50+", label: "Premium Products" },
 ];
 
@@ -91,7 +94,7 @@ export default function Home() {
   return (
     <main>
       {/* ============================================
-          Hero Section — Chess.com Inspired Dark + Green Accent
+          Hero Section
           ============================================ */}
       <section className="relative overflow-hidden section-padding">
         {/* Background glow flares */}
@@ -113,13 +116,23 @@ export default function Home() {
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-foreground-secondary sm:text-xl">
-            Play better, train smarter, and equip your game. Experience world-class coaching, handcrafted chess sets, and next-generation tech analysis.
+            The premier platform for self-learning courses, live master coaching, and tournament-grade chess equipment.
           </p>
+
+          {/* Highlighted Banner for $20/mo */}
+          <div className="mt-6 inline-flex items-center gap-3 bg-surface-elevated border border-chess-green/40 px-5 py-2.5 rounded-2xl text-sm">
+            <span className="px-2.5 py-0.5 rounded-full bg-chess-green text-black font-extrabold text-xs">
+              NEW
+            </span>
+            <span className="text-foreground font-medium">
+              Self-Learning Membership: <strong className="text-chess-green-light font-bold">$20/month</strong> (Includes 1 Live Session)
+            </span>
+          </div>
 
           {/* CTA Buttons */}
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Button href="/coaching" size="lg" variant="primary">
-              <span>▶ Play & Learn Coaching</span>
+              <span>📚 Explore Self-Learning & Plans</span>
             </Button>
             <Button href="/shop" variant="gold" size="lg">
               <span>🛒 Browse Shop</span>
@@ -157,14 +170,18 @@ export default function Home() {
       <section className="section-padding">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
-            label="Our Services"
-            title="Coaching Programs for Every Level"
-            subtitle="Tailored learning for kids, private students, and school institutions."
+            label="Learning Solutions"
+            title="Self-Paced Courses & Master Coaching"
+            subtitle="Start with our $20/mo Self-Learning plan or enroll in specialized coaching."
           />
 
           <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
             {services.map((s) => (
-              <Card key={s.title} className="p-8 text-center flex flex-col justify-between hover:border-chess-green/50 transition-all">
+              <Card
+                key={s.title}
+                glow={s.isFeatured}
+                className={`p-8 text-center flex flex-col justify-between ${s.isFeatured ? "border-chess-green/50 bg-surface-elevated" : "hover:border-chess-green/50"}`}
+              >
                 <div>
                   <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-surface-elevated text-3xl text-chess-green-light">
                     {s.icon}
@@ -175,7 +192,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="mt-8">
-                  <Button href={s.href} variant="outline" size="sm">
+                  <Button href={s.href} variant={s.isFeatured ? "primary" : "outline"} size="sm">
                     Learn More →
                   </Button>
                 </div>
@@ -272,12 +289,12 @@ export default function Home() {
                 <div className="text-7xl mb-4 text-gradient-green">♚</div>
                 <h3 className="text-2xl font-bold">{SITE_SLOGAN}</h3>
                 <p className="mt-3 text-sm text-foreground-secondary max-w-md mx-auto">
-                  Experience grandmaster-led instruction combined with cutting-edge tools.
+                  Experience self-paced learning courses paired with live 1-on-1 master instruction.
                 </p>
                 <div className="mt-8 inline-flex items-center gap-2 text-xs font-mono text-chess-green-light bg-chess-green/10 px-4 py-2 rounded-lg border border-chess-green/30">
-                  <span>● ONLINE PLATFORM</span>
+                  <span>● $20/MO MEMBERSHIP</span>
                   <span>·</span>
-                  <span>V1 ACTIVE</span>
+                  <span>1 LIVE SESSION INCLUDED</span>
                 </div>
               </Card>
             </div>
@@ -292,14 +309,14 @@ export default function Home() {
         <div className="mx-auto max-w-4xl">
           <Card glow className="p-10 sm:p-14 text-center border-chess-green/30 relative">
             <h2 className="text-3xl font-extrabold sm:text-4xl">
-              Ready to Upgrade Your Game?
+              Start Your Self-Learning Plan Today
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-foreground-secondary">
-              Book a coaching session or chat with our team directly on WhatsApp.
+              Join for $20/month to get complete digital course access and 1 live coaching session every month.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button href="/coaching" size="lg" variant="primary">
-                Book a Session
+                Join Self-Learning ($20/mo)
               </Button>
               <Button href="/contact" variant="whatsapp" size="lg">
                 💬 Chat on WhatsApp
