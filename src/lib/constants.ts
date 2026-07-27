@@ -90,7 +90,7 @@ export const RATING_CASE_STUDIES = [
     initialRating: "1350 Lichess",
     currentRating: "1910 Lichess",
     gain: "+560 Elo in 8 Months",
-    program: "$20/mo Self-Learning Membership",
+    program: "$45/mo Self-Learning Membership",
     quote: "Having 1 live GM session every month to review my mistakes kept me accountable while I worked through the video modules.",
   },
   {
@@ -113,7 +113,7 @@ export const AUDIENCE_SEGMENTS = [
     icon: "🧸",
     headline: "Build Focus, Logic & Confidence Early",
     description: "Fun, gamified lessons with small group sizes, safety guidelines, and weekly progress reports sent directly to parents.",
-    highlight: "$350 Package or $20/mo Self-Learning",
+    highlight: "$350 Package or $45/mo Self-Learning",
     ctaText: "Book Kids Assessment",
   },
   {
@@ -122,8 +122,8 @@ export const AUDIENCE_SEGMENTS = [
     icon: "🧠",
     headline: "Break Rating Plateaus on Your Schedule",
     description: "Flexible self-learning video courses combined with 1 monthly live master session designed for busy professionals.",
-    highlight: "$20/mo Self-Learning Membership",
-    ctaText: "Start Self-Learning ($20/mo)",
+    highlight: "$45/mo Self-Learning Membership",
+    ctaText: "Start Self-Learning ($45/mo)",
   },
   {
     id: "competitive",
@@ -143,8 +143,8 @@ export const EXPANDED_FAQS = [
     answer: "No. NXChess is dedicated exclusively to chess learning, 1-on-1 coaching, self-paced courses, and premium equipment. We do not host public match playing servers.",
   },
   {
-    question: "What is included in the $20/month Self-Learning Membership?",
-    answer: "For $20/month, you get full access to our digital self-learning video library, interactive tactical modules, study roadmaps, AND 1 live 1-on-1 coaching session with a master instructor every month!",
+    question: "What is included in the $45/month Self-Learning Membership?",
+    answer: "For $45/month, you get full access to our digital self-learning video library, interactive tactical modules, study roadmaps, AND 1 live 1-on-1 coaching session with a master instructor every month!",
   },
   {
     question: "What is the duration of live coaching classes?",

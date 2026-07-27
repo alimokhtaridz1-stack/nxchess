@@ -17,7 +17,7 @@ export default function StickyCtaBar() {
             <span className="flex h-3 w-3 rounded-full bg-chess-green animate-ping" />
             <div>
               <span className="text-xs font-bold text-foreground">
-                Self-Learning Membership: <span className="text-chess-green-light font-extrabold">$20/mo</span>
+                Self-Learning Membership: <span className="text-chess-green-light font-extrabold">$45/mo</span>
               </span>
               <p className="text-[11px] text-foreground-muted">
                 Includes full video course access + 1 monthly live session
@@ -41,7 +41,7 @@ export default function StickyCtaBar() {
               size="sm"
               className="flex-1 sm:flex-initial text-xs sm:text-sm"
             >
-              <span>Join ($20/mo)</span>
+              <span>Join ($45/mo)</span>
             </Button>
           </div>
         </div>

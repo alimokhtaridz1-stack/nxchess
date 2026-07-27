@@ -43,7 +43,7 @@ export default function ContactPage() {
             Contact <span className="text-gradient-gold">{SITE_NAME}</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-foreground-secondary">
-            Inquire about our 8-Level Piece Curriculum, $20/mo Self-Learning plan, Kids Lessons ($350), Private Coaching ($650), or Holiday Camps.
+            Inquire about our 8-Level Piece Curriculum, $45/mo Self-Learning plan, Kids Lessons ($350), Private Coaching ($650), or Holiday Camps.
           </p>
 
           <div className="mt-6 inline-flex items-center gap-2 text-xs font-bold text-chess-green-light bg-chess-green/15 px-4 py-2 rounded-xl border border-chess-green/30">
@@ -193,7 +193,7 @@ export default function ContactPage() {
                       onChange={handleChange}
                       className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-chess-green focus:ring-1 focus:ring-chess-green/30 transition-colors"
                     >
-                      <option value="self-learning">Self-Learning Membership ($20/mo)</option>
+                      <option value="self-learning">Self-Learning Membership ($45/mo)</option>
                       <option value="kids">Kids Chess Lessons ($350)</option>
                       <option value="private">Private 1-on-1 Coaching ($650)</option>
                       <option value="camp">Holiday & Summer Chess Camp</option>

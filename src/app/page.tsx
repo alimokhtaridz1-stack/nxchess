@@ -56,7 +56,7 @@ const partnerLogos = [
 
 const stats = [
   { value: "4.9 ★", label: "Parent & Student Rating" },
-  { value: "$20/mo", label: "Self-Learning Membership" },
+  { value: "$45/mo", label: "Self-Learning Membership" },
   { value: "8 Levels", label: "Pawn to King Curriculum" },
   { value: "15+", label: "Master Coaches" },
 ];
@@ -92,7 +92,7 @@ export default function Home() {
               ACADEMY MEMBERSHIP
             </span>
             <span className="text-foreground font-medium">
-              Self-Learning Plan: <strong className="text-chess-green-light font-bold">$20/month</strong> (Includes 1 Monthly Live Session)
+              Self-Learning Plan: <strong className="text-chess-green-light font-bold">$45/month</strong> (Includes 1 Monthly Live Session)
             </span>
           </div>
 

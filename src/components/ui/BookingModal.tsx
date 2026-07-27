@@ -115,7 +115,7 @@ export default function BookingModal({
                     onChange={(e) => setBookingData({ ...bookingData, program: e.target.value })}
                     className="w-full rounded-xl border border-border bg-background px-3.5 py-2.5 text-sm text-foreground outline-none focus:border-chess-green"
                   >
-                    <option value="self-learning">Self-Learning Membership ($20/mo)</option>
+                    <option value="self-learning">Self-Learning Membership ($45/mo)</option>
                     <option value="kids">Kids Chess Lessons ($350)</option>
                     <option value="private">Private Master Coaching ($650)</option>
                     <option value="camp">Holiday & Summer Camp</option>

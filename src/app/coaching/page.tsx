@@ -16,7 +16,7 @@ const learningPlans = [
   {
     id: "self-learning",
     title: "Self-Learning Membership",
-    price: "$20",
+    price: "$45",
     period: "/ month",
     badge: "Best Value",
     isFeatured: true,
@@ -32,7 +32,7 @@ const learningPlans = [
       "Personalized monthly homework & study guide",
       "Progress tracking dashboard",
     ],
-    cta: "Join Self-Learning ($20/mo)",
+    cta: "Join Self-Learning ($45/mo)",
     btnVariant: "primary" as const,
   },
   {
@@ -127,7 +127,7 @@ export default function CoachingPage() {
           <SectionHeading
             label="Learning Plans"
             title="Self-Learning & Coaching Options"
-            subtitle="Choose between our popular $20/month Self-Learning plan (includes 1 monthly live session), Kids Lessons ($350), or Private Master Coaching ($650)."
+            subtitle="Choose between our popular $45/month Self-Learning plan (includes 1 monthly live session), Kids Lessons ($350), or Private Master Coaching ($650)."
           />
 
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
