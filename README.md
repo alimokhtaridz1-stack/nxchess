@@ -71,6 +71,8 @@ src/
 - [Architecture](./docs/ARCHITECTURE.md) — Folder structure, components, data flow
 - [Agent Guidelines](./docs/AGENTS.md) — Coding standards and AI agent protocols
 - [Roadmap](./docs/ROADMAP.md) — Feature roadmap for V1, V2, V3
+- [Status Dashboard](./docs/STATUS.md) — Live project status, sprint tracker, blockers
+- [Changelog](./docs/CHANGELOG.md) — Full history of all agent activities
 
 ## Current Version: V1
 

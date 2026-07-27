@@ -173,6 +173,29 @@ Examples:
 2. Update `docs/ARCHITECTURE.md` if it adds new routes, components, or data flows
 3. Add a comment at the top of new files explaining their purpose
 
+### ⚡ MANDATORY: Update Tracking System
+
+**After completing ANY task**, every agent MUST:
+
+1. **Update `docs/STATUS.md`**:
+   - Mark your task as ✅ Done in the Current Sprint table
+   - Update your agent's activity counts in the Agent Activity Summary
+   - Add any new blockers or remove resolved ones
+   - Add new files to the "Files Modified This Sprint" table
+
+2. **Add an entry to `docs/CHANGELOG.md`**:
+   - Copy the template at the bottom of the file
+   - Fill in: date, agent, summary, tasks done, files created/modified
+   - Include build verification results
+   - Include git commit info
+
+3. **Update `docs/STATUS.md` → "Up Next" queue**:
+   - Remove tasks you've completed
+   - Add any new follow-up tasks discovered during your work
+
+> ⚠️ **Failure to update the tracking system means the work is NOT considered done.**
+> Other agents rely on this to know the current state of the project.
+
 ### When Modifying Shared Files
 
 Shared files require extra care. Before modifying:

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | NXChess",
   },
   description:
-    "A modern chess platform combining chess coaching, premium products, and cutting-edge technology.",
+    "Elevate your chess game with premium coaching, curated products, and cutting-edge technology. NXChess is the modern chess platform for players of all levels.",
 };
 
 export default function RootLayout({
@@ -31,7 +33,11 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-background text-foreground">
+        <Header />
+        <div className="flex-1 pt-16">{children}</div>
+        <Footer />
+      </body>
     </html>
   );
 }
