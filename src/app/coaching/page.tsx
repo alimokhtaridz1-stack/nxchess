@@ -6,7 +6,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 export const metadata: Metadata = {
   title: "Coaching & Learning Plans",
   description:
-    "Explore NXChess learning plans: $20/mo Self-Learning Membership with 1 monthly live session, Kids Lessons, Private Coaching, and School Programs.",
+    "Explore NXChess learning plans: $20/mo Self-Learning Membership with 1 monthly live session, Kids Lessons ($350), Private Coaching ($650), and School Programs.",
 };
 
 const learningPlans = [
@@ -17,6 +17,9 @@ const learningPlans = [
     period: "/ month",
     badge: "Best Value",
     isFeatured: true,
+    hoverGlow: "hover-glow-green",
+    badgeColor: "bg-chess-green text-black font-extrabold",
+    iconBg: "bg-gradient-to-br from-chess-green/30 to-emerald-700/40 text-chess-green-light border-chess-green/40",
     description:
       "Full access to our interactive digital self-learning platform combined with a monthly live 1-on-1 coaching session.",
     features: [
@@ -36,6 +39,9 @@ const learningPlans = [
     period: "/ package",
     badge: "Youth Program",
     isFeatured: false,
+    hoverGlow: "hover-glow-gold",
+    badgeColor: "bg-gold/20 text-gold-light border border-gold/40 font-bold",
+    iconBg: "bg-gradient-to-br from-amber-500/30 to-orange-700/40 text-gold-light border-gold/40",
     description:
       "Fun, structured lessons designed for ages 5-15 to build logical thinking, focus, and youth tournament preparation.",
     features: [
@@ -55,6 +61,9 @@ const learningPlans = [
     period: "/ package",
     badge: "Intensive 1-on-1",
     isFeatured: false,
+    hoverGlow: "hover-glow-tech",
+    badgeColor: "bg-tech-blue/20 text-tech-blue-light border border-tech-blue/40 font-bold",
+    iconBg: "bg-gradient-to-br from-cyan-500/30 to-blue-700/40 text-tech-blue-light border-tech-blue/40",
     description:
       "Customized 1-on-1 training with titled masters for ambitious players aiming for rating milestones and competitive mastery.",
     features: [
@@ -89,6 +98,7 @@ const coaches = [
     specialty: "Positional Mastery & Strategy",
     bio: "Former national champion with 20+ years of coaching experience. Has trained top grandmasters and youth prodigies.",
     icon: "♔",
+    color: "text-gold-light bg-gold/15 border-gold/30",
   },
   {
     name: "IM Sofia Chen",
@@ -97,6 +107,7 @@ const coaches = [
     specialty: "Tactics & Opening Preparation",
     bio: "International Master and certified educator known for creative tactical training methods and opening analysis.",
     icon: "♕",
+    color: "text-chess-green-light bg-chess-green/15 border-chess-green/30",
   },
   {
     name: "FM David Torres",
@@ -105,6 +116,7 @@ const coaches = [
     specialty: "Kids Development & Fundamentals",
     bio: "Dedicated youth coach who has introduced over 300 children to competitive chess and state championships.",
     icon: "♗",
+    color: "text-tech-blue-light bg-tech-blue/15 border-tech-blue/30",
   },
 ];
 
@@ -128,59 +140,60 @@ const faqs = [
 
 export default function CoachingPage() {
   return (
-    <main>
+    <main className="overflow-x-hidden">
       {/* Hero */}
       <section className="relative section-padding overflow-hidden">
-        <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-chess-green/10 rounded-full blur-3xl" />
-        <div className="relative mx-auto max-w-4xl text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-chess-green/40 bg-chess-green/10 px-4 py-2">
-            <span className="text-xs font-bold text-chess-green-light uppercase tracking-wider">
+        <div className="pointer-events-none absolute top-0 left-1/3 w-[600px] h-[400px] bg-chess-green/15 rounded-full blur-[100px]" />
+        <div className="pointer-events-none absolute top-10 right-1/4 w-[500px] h-[400px] bg-gold/15 rounded-full blur-[100px]" />
+
+        <div className="relative mx-auto max-w-4xl text-center z-10">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-chess-green/40 bg-chess-green/15 px-4 py-2 backdrop-blur-md">
+            <span className="text-xs font-extrabold text-chess-green-light uppercase tracking-wider">
               ♟ SELF-LEARNING & COACHING PLANS
             </span>
           </div>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            NXChess <span className="text-gradient-green">Learning & Coaching</span>
+          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+            NXChess <span className="text-gradient-brand">Learning & Coaching</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-foreground-secondary">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-foreground-secondary leading-relaxed">
             Master the game through self-paced digital courses and live 1-on-1 master coaching.
           </p>
         </div>
       </section>
 
-      {/* Pricing & Learning Plans (Includes $20/mo Self-Learning Tier) */}
-      <section className="section-padding border-t border-border bg-background-secondary">
-        <div className="mx-auto max-w-6xl">
+      {/* Pricing & Learning Plans */}
+      <section className="section-padding border-t border-border bg-background-secondary relative">
+        <div className="mx-auto max-w-6xl relative z-10">
           <SectionHeading
             label="Learning Plans"
             title="Self-Learning & Coaching Options"
-            subtitle="Choose between our popular $20/month Self-Learning plan (includes 1 monthly live session) or dedicated 1-on-1 packages."
+            subtitle="Choose between our popular $20/month Self-Learning plan (includes 1 monthly live session), Kids Lessons ($350), or Private Master Coaching ($650)."
           />
 
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
             {learningPlans.map((plan) => (
               <Card
                 key={plan.id}
-                glow={plan.isFeatured}
-                className={`p-8 flex flex-col justify-between relative ${plan.isFeatured ? "border-chess-green/50 scale-[1.03] bg-surface-elevated" : "border-border"}`}
+                className={`p-8 flex flex-col justify-between relative ${plan.hoverGlow} ${plan.isFeatured ? "border-chess-green/50 scale-[1.03] bg-gradient-to-b from-surface-elevated to-surface shadow-2xl" : "bg-surface"}`}
                 id={`plan-${plan.id}`}
               >
                 {plan.isFeatured && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-chess-green px-4 py-1 text-xs font-extrabold text-white uppercase tracking-wider shadow-md">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-chess-green to-emerald-500 px-5 py-1 text-xs font-extrabold text-black uppercase tracking-wider shadow-lg">
                     ★ MOST POPULAR ★
                   </div>
                 )}
 
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-bold text-foreground-muted uppercase tracking-wider">
+                    <span className={`text-xs px-3 py-1 rounded-full ${plan.badgeColor}`}>
                       {plan.badge}
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-bold">{plan.title}</h3>
+                  <h3 className="text-2xl font-bold text-foreground">{plan.title}</h3>
 
                   <div className="my-4">
-                    <span className="text-4xl font-extrabold text-chess-green-light">{plan.price}</span>
+                    <span className="text-4xl font-extrabold text-gradient-green">{plan.price}</span>
                     <span className="text-sm font-semibold text-foreground-secondary">{plan.period}</span>
                   </div>
 
@@ -220,21 +233,21 @@ export default function CoachingPage() {
       </section>
 
       {/* School Program Banner */}
-      <section className="section-padding">
+      <section className="section-padding relative">
         <div className="mx-auto max-w-5xl">
-          <Card className="p-10 border-tech-blue/30 bg-surface flex flex-col md:flex-row items-center justify-between gap-8">
+          <Card className="p-10 border-tech-blue/40 bg-gradient-to-r from-surface-elevated to-surface flex flex-col md:flex-row items-center justify-between gap-8 hover-glow-tech">
             <div>
-              <div className="inline-block text-xs font-bold uppercase tracking-wider text-tech-blue-light bg-tech-blue/10 px-3 py-1 rounded-full border border-tech-blue/30 mb-3">
+              <div className="inline-block text-xs font-bold uppercase tracking-wider text-tech-blue-light bg-tech-blue/15 px-3 py-1 rounded-full border border-tech-blue/40 mb-3">
                 🏫 School & Academy Solution
               </div>
-              <h3 className="text-2xl font-bold">{schoolProgram.title}</h3>
+              <h3 className="text-2xl font-bold text-foreground">{schoolProgram.title}</h3>
               <p className="text-sm text-foreground-secondary mt-2 max-w-xl">
                 {schoolProgram.description}
               </p>
               <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-foreground-secondary">
                 {schoolProgram.features.map((f) => (
                   <li key={f} className="flex items-center gap-2">
-                    <span className="text-tech-blue-light">✓</span> {f}
+                    <span className="text-tech-blue-light font-bold">✓</span> {f}
                   </li>
                 ))}
               </ul>
@@ -257,17 +270,17 @@ export default function CoachingPage() {
 
           <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
             {coaches.map((c) => (
-              <Card key={c.name} className="p-8">
+              <Card key={c.name} className="p-8 hover-glow-green bg-surface">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-chess-green/10 text-3xl text-chess-green-light">
+                  <div className={`flex h-14 w-14 items-center justify-center rounded-2xl border text-3xl shadow-md ${c.color}`}>
                     {c.icon}
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg">{c.name}</h3>
-                    <p className="text-xs text-chess-green-light font-semibold">{c.title} · {c.rating}</p>
+                    <h3 className="font-bold text-lg text-foreground">{c.name}</h3>
+                    <p className="text-xs text-chess-green-light font-bold">{c.title} · {c.rating}</p>
                   </div>
                 </div>
-                <p className="text-xs text-foreground-muted font-medium mb-3">Specialty: {c.specialty}</p>
+                <p className="text-xs text-foreground-muted font-semibold mb-3">Specialty: {c.specialty}</p>
                 <p className="text-sm leading-relaxed text-foreground-secondary">
                   {c.bio}
                 </p>
@@ -287,8 +300,8 @@ export default function CoachingPage() {
 
           <div className="mt-12 space-y-4">
             {faqs.map((faq) => (
-              <Card key={faq.question} className="p-6">
-                <h4 className="font-bold">{faq.question}</h4>
+              <Card key={faq.question} className="p-6 bg-surface hover:border-chess-green/40">
+                <h4 className="font-bold text-foreground">{faq.question}</h4>
                 <p className="mt-2 text-sm text-foreground-secondary leading-relaxed">
                   {faq.answer}
                 </p>

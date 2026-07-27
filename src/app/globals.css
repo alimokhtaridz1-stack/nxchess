@@ -2,48 +2,43 @@
 
 /* ============================================
    NXChess Design System
-   Chess.com Inspired Dark Theme + Tech Accents
-   Slogan: The Next Generation of Chess
+   Vibrant Dark Charcoal Theme + Rich Color Accents
    ============================================ */
 
 :root {
   /* Chess.com Dark Charcoal Palette */
-  --background: #262421;
-  --background-secondary: #1e1d1b;
-  --surface: #312e2b;
-  --surface-hover: #3a3733;
-  --surface-elevated: #423f3a;
+  --background: #1d1b19;
+  --background-secondary: #262421;
+  --surface: #2d2a26;
+  --surface-hover: #38342f;
+  --surface-elevated: #44403a;
 
   /* Borders */
-  --border: #3d3b38;
-  --border-hover: #524f4a;
+  --border: #403c37;
+  --border-hover: #57524b;
   --border-accent: #81b64c;
-  --border-tech: rgba(56, 189, 248, 0.4);
 
   /* Text */
   --foreground: #ffffff;
-  --foreground-secondary: #c3c2c1;
-  --foreground-muted: #8b8987;
+  --foreground-secondary: #d1cfcd;
+  --foreground-muted: #969390;
 
-  /* Primary Brand — Iconic Chess Green */
+  /* Vibrant Colors */
   --chess-green: #81b64c;
   --chess-green-light: #96c85e;
-  --chess-green-dark: #689938;
-  --chess-green-glow: rgba(129, 182, 76, 0.25);
+  --chess-green-dark: #5d9948;
 
-  /* Gold & Amber Accents */
-  --gold: #f2c94c;
-  --gold-light: #fcd567;
-  --gold-dark: #d4a72c;
-  --gold-glow: rgba(242, 201, 76, 0.2);
+  --gold: #f59e0b;
+  --gold-light: #fbbf24;
+  --gold-dark: #d97706;
 
-  /* Technology Accents — Cyan & Electric Blue */
-  --tech-blue: #38bdf8;
-  --tech-blue-light: #7dd3fc;
+  --tech-blue: #06b6d4;
+  --tech-blue-light: #38bdf8;
   --tech-blue-dark: #0284c7;
-  --tech-blue-glow: rgba(56, 189, 248, 0.25);
 
-  /* Communication */
+  --purple-accent: #a855f7;
+  --purple-light: #c084fc;
+
   --whatsapp: #25d366;
 }
 
@@ -57,7 +52,6 @@
   --color-border: var(--border);
   --color-border-hover: var(--border-hover);
   --color-border-accent: var(--border-accent);
-  --color-border-tech: var(--border-tech);
 
   --color-foreground: var(--foreground);
   --color-foreground-secondary: var(--foreground-secondary);
@@ -74,6 +68,10 @@
   --color-tech-blue: var(--tech-blue);
   --color-tech-blue-light: var(--tech-blue-light);
   --color-tech-blue-dark: var(--tech-blue-dark);
+
+  --color-purple-accent: var(--purple-accent);
+  --color-purple-light: var(--purple-light);
+
   --color-whatsapp: var(--whatsapp);
 
   --font-sans: var(--font-geist-sans);
@@ -97,57 +95,96 @@ html {
 }
 
 /* ============================================
-   Gradients & Glow Utilities
+   Rich Vibrant Gradients & Effects
    ============================================ */
 
-/* Chess Green gradient text */
+/* Emerald Green Gradient Text */
 .text-gradient-green {
-  background: linear-gradient(135deg, #a3d160, #81b64c, #5d9948);
+  background: linear-gradient(135deg, #a3d160 0%, #81b64c 50%, #34d399 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Gold gradient text */
+/* Rich Gold & Amber Gradient Text */
 .text-gradient-gold {
-  background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+  background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Technology blue gradient text */
+/* Electric Cyan/Blue Gradient Text */
 .text-gradient-tech {
-  background: linear-gradient(135deg, #7dd3fc, #38bdf8, #0284c7);
+  background: linear-gradient(135deg, #a5f3fc 0%, #38bdf8 50%, #818cf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Green Play Glow */
-.glow-green {
-  box-shadow: 0 0 25px var(--chess-green-glow), 0 0 50px rgba(129, 182, 76, 0.1);
+/* Multi-color Brand Gradient Text */
+.text-gradient-brand {
+  background: linear-gradient(135deg, #96c85e 0%, #fbbf24 35%, #38bdf8 70%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Gold Glow */
-.glow-gold {
-  box-shadow: 0 0 25px var(--gold-glow), 0 0 50px rgba(242, 201, 76, 0.1);
+/* Glowing Border Utilities */
+.border-gradient-green {
+  border-image: linear-gradient(135deg, #81b64c, #34d399) 1;
 }
 
-/* Tech Blue Glow */
-.glow-tech {
-  box-shadow: 0 0 25px var(--tech-blue-glow), 0 0 50px rgba(56, 189, 248, 0.1);
+.border-gradient-gold {
+  border-image: linear-gradient(135deg, #fbbf24, #f59e0b) 1;
+}
+
+/* Colorful Card Hover Glows */
+.hover-glow-green {
+  transition: all 0.25s ease-in-out;
+}
+.hover-glow-green:hover {
+  box-shadow: 0 10px 30px -10px rgba(129, 182, 76, 0.35), 0 0 15px rgba(52, 211, 153, 0.2);
+  border-color: rgba(129, 182, 76, 0.6);
+  transform: translateY(-3px);
+}
+
+.hover-glow-gold {
+  transition: all 0.25s ease-in-out;
+}
+.hover-glow-gold:hover {
+  box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.35), 0 0 15px rgba(251, 191, 36, 0.2);
+  border-color: rgba(245, 158, 11, 0.6);
+  transform: translateY(-3px);
+}
+
+.hover-glow-tech {
+  transition: all 0.25s ease-in-out;
+}
+.hover-glow-tech:hover {
+  box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.35), 0 0 15px rgba(6, 182, 212, 0.2);
+  border-color: rgba(56, 189, 248, 0.6);
+  transform: translateY(-3px);
+}
+
+.hover-glow-purple {
+  transition: all 0.25s ease-in-out;
+}
+.hover-glow-purple:hover {
+  box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.35), 0 0 15px rgba(192, 132, 252, 0.2);
+  border-color: rgba(168, 85, 247, 0.6);
+  transform: translateY(-3px);
 }
 
 /* Glass effect */
 .glass {
-  background: rgba(49, 46, 43, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(45, 42, 38, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
 }
 
-/* Section spacing */
+/* Section padding */
 .section-padding {
   padding: 5rem 1.5rem;
 }
