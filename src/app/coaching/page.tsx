@@ -6,54 +6,63 @@ import SectionHeading from "@/components/ui/SectionHeading";
 export const metadata: Metadata = {
   title: "Chess Coaching",
   description:
-    "Personalized chess coaching from expert players. Private lessons, group classes, and custom training programs for all skill levels.",
+    "Explore NXChess coaching programs: Kids Chess Lessons, Private Grandmaster Coaching, and School Programs.",
 };
 
-const packages = [
+const mainPrograms = [
   {
-    name: "Beginner",
-    price: "$45",
-    period: "/session",
-    description: "Perfect for players just starting their chess journey.",
+    id: "kids",
+    title: "Kids Chess Lessons",
+    subtitle: "Ages 5 - 15",
+    icon: "♟",
+    badge: "Youth Program",
+    isTech: false,
+    description:
+      "Interactive, fun, and structured chess lessons designed specifically for children and young players to develop focus, patience, and logic.",
     features: [
-      "1-hour private session",
-      "Opening fundamentals",
-      "Basic tactics training",
-      "Game analysis review",
-      "Practice exercises",
+      "Fun gamified learning puzzles",
+      "Small group sizes (max 6 students)",
+      "Youth tournament preparation",
+      "Weekly parent progress updates",
+      "Interactive digital chess board tools",
     ],
-    highlight: false,
+    cta: "Enroll in Kids Lessons",
   },
   {
-    name: "Intermediate",
-    price: "$75",
-    period: "/session",
-    description: "For club players looking to break through plateaus.",
+    id: "private",
+    title: "Private Coaching",
+    subtitle: "All Ratings & Adults",
+    icon: "♚",
+    badge: "1-on-1 Training",
+    isTech: true,
+    description:
+      "Direct 1-on-1 instruction with titled coaches tailored to your personal goals, opening repertoire, positional play, and endgame mastery.",
     features: [
-      "90-minute private session",
-      "Advanced opening repertoire",
-      "Positional understanding",
-      "Endgame technique",
-      "Tournament preparation",
-      "Weekly progress reports",
+      "Personalized training roadmap",
+      "Deep database & opening prep",
+      "Real-time game analysis & feedback",
+      "AI-powered error detection",
+      "Flexible schedule & session recording",
     ],
-    highlight: true,
+    cta: "Book Private Session",
   },
   {
-    name: "Advanced",
-    price: "$120",
-    period: "/session",
-    description: "Elite training for competitive and tournament players.",
+    id: "school",
+    title: "School Programs",
+    subtitle: "Schools & Academies",
+    icon: "🏫",
+    badge: "Institutional",
+    isTech: false,
+    description:
+      "Complete after-school chess programs and curriculum integration for elementary, middle, and high schools.",
     features: [
-      "2-hour intensive session",
-      "Deep opening preparation",
-      "Complex middlegame strategy",
-      "Advanced endgame mastery",
-      "Psychological preparation",
-      "Custom study plans",
-      "Priority scheduling",
+      "Turnkey curriculum & lesson plans",
+      "Certified grandmaster/master instructors",
+      "In-school tournament organization",
+      "Equipment & chess clock provision",
+      "Inter-school league representation",
     ],
-    highlight: false,
+    cta: "Inquire for School",
   },
 ];
 
@@ -62,48 +71,43 @@ const coaches = [
     name: "GM Alexander Petrov",
     title: "Head Coach",
     rating: "2580 FIDE",
-    specialty: "Positional Play & Endgames",
-    bio: "Former national champion with 20+ years of coaching experience. Specializes in developing players from club to tournament level.",
+    specialty: "Positional Mastery & Strategy",
+    bio: "Former national champion with 20+ years of coaching experience. Has trained top grandmasters and youth prodigies.",
     icon: "♔",
   },
   {
     name: "IM Sofia Chen",
-    title: "Senior Coach",
+    title: "Senior Master Coach",
     rating: "2410 FIDE",
-    specialty: "Tactical Training & Openings",
-    bio: "International Master and certified chess educator. Known for creative tactical training methods that produce rapid improvement.",
+    specialty: "Tactics & Opening Preparation",
+    bio: "International Master and certified educator known for creative tactical training methods and opening analysis.",
     icon: "♕",
   },
   {
     name: "FM David Torres",
-    title: "Youth Coach",
+    title: "Youth Program Director",
     rating: "2320 FIDE",
-    specialty: "Junior Development",
-    bio: "Experienced youth coach who has trained multiple national junior champions. Makes learning chess fun and engaging for young minds.",
+    specialty: "Kids Development & Fundamentals",
+    bio: "Dedicated youth coach who has introduced over 300 children to competitive chess and state championships.",
     icon: "♗",
   },
 ];
 
 const faqs = [
   {
-    question: "How do online coaching sessions work?",
+    question: "How do online sessions work?",
     answer:
-      "Sessions are conducted via video call with a shared interactive chess board. You'll receive real-time instruction, analyze your games together, and get personalized homework after each session.",
+      "Sessions take place via high-definition video calls with interactive online chess boards. Students receive session recordings and digital homework assignments after every class.",
   },
   {
-    question: "What skill level do I need to start?",
+    question: "What age is recommended for Kids Lessons?",
     answer:
-      "We welcome all levels! Whether you're learning how the pieces move or preparing for your next tournament, we have a coaching plan tailored to your needs.",
+      "Our Kids Chess Lessons are structured for ages 5 to 15, categorized by experience level from complete beginner to advanced youth tournament competitors.",
   },
   {
-    question: "Can I reschedule a session?",
+    question: "Can we bring NXChess to our school?",
     answer:
-      "Yes, sessions can be rescheduled with at least 24 hours notice at no extra charge. We understand that life happens.",
-  },
-  {
-    question: "Do you offer package discounts?",
-    answer:
-      "Yes! We offer 10% off when you book 5 sessions, and 20% off when you book 10 sessions. Contact us for custom package pricing.",
+      "Yes! We partner directly with public and private schools to provide instructors, learning materials, and after-school chess clubs.",
   },
 ];
 
@@ -114,98 +118,112 @@ export default function CoachingPage() {
       <section className="relative section-padding overflow-hidden">
         <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-gold/5 rounded-full blur-3xl" />
         <div className="relative mx-auto max-w-4xl text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/20 bg-gold/5 px-4 py-2">
-            <span className="text-sm font-medium text-gold">♟ Personalized Training</span>
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-2">
+            <span className="text-xs font-semibold text-gold uppercase tracking-wider">
+              ♟ WORLD-CLASS INSTRUCTION
+            </span>
           </div>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            Master Chess with
-            <br />
-            <span className="text-gradient-gold">Expert Coaching</span>
+            NXChess <span className="text-gradient-gold">Coaching</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-foreground-secondary">
-            One-on-one sessions with titled players who know how to unlock your
-            potential. From first moves to tournament victories.
+            Structured programs built for youth prodigies, ambitious adults, and school institutions.
           </p>
         </div>
       </section>
 
-      {/* Pricing Packages */}
+      {/* Main 3 Programs: Kids, Private, School */}
       <section className="section-padding border-t border-border bg-background-secondary">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
-            label="Packages"
-            title="Choose Your Training Path"
-            subtitle="Flexible coaching packages designed for every stage of your chess journey."
+            label="Our Core Programs"
+            title="Coaching Tailored To Your Needs"
+            subtitle="Explore our three specialized streams designed to elevate chess skills at any stage."
           />
 
-          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {packages.map((pkg) => (
+          <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+            {mainPrograms.map((prog) => (
               <Card
-                key={pkg.name}
-                glow={pkg.highlight}
-                className={`relative flex flex-col p-8 ${pkg.highlight ? "border-gold/30 scale-[1.02]" : ""}`}
-                id={`package-${pkg.name.toLowerCase()}`}
+                key={prog.id}
+                glow={prog.isTech}
+                className={`p-8 flex flex-col justify-between relative ${prog.isTech ? "border-tech-blue/40" : "border-border"}`}
+                id={`coaching-program-${prog.id}`}
               >
-                {pkg.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gold px-4 py-1 text-xs font-bold text-black">
-                    MOST POPULAR
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-bold text-foreground-muted uppercase tracking-wider">
+                      {prog.subtitle}
+                    </span>
+                    <span className={`text-xs px-3 py-1 rounded-full font-semibold ${prog.isTech ? "bg-tech-blue/15 text-tech-blue-light border border-tech-blue/30" : "bg-gold/15 text-gold border border-gold/30"}`}>
+                      {prog.badge}
+                    </span>
                   </div>
-                )}
-                <div className="mb-6">
-                  <h3 className="text-xl font-bold">{pkg.name}</h3>
-                  <p className="mt-2 text-sm text-foreground-secondary">
-                    {pkg.description}
+
+                  <div className="flex items-center gap-3 my-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-surface-elevated text-2xl">
+                      {prog.icon}
+                    </div>
+                    <h3 className="text-xl font-bold">{prog.title}</h3>
+                  </div>
+
+                  <p className="mt-3 text-sm text-foreground-secondary leading-relaxed">
+                    {prog.description}
                   </p>
+
+                  <div className="my-6 border-t border-border pt-6">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-foreground-muted mb-3 block">
+                      Program Highlights:
+                    </span>
+                    <ul className="space-y-2.5 text-sm text-foreground-secondary">
+                      {prog.features.map((feat) => (
+                        <li key={feat} className="flex items-start gap-2.5">
+                          <span className={prog.isTech ? "text-tech-blue-light mt-0.5" : "text-gold mt-0.5"}>✓</span>
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <div className="mb-6">
-                  <span className="text-4xl font-bold text-gold">{pkg.price}</span>
-                  <span className="text-foreground-secondary">{pkg.period}</span>
+
+                <div className="mt-6 pt-4 border-t border-border">
+                  <Button
+                    href="/contact"
+                    variant={prog.isTech ? "tech" : "primary"}
+                    className="w-full"
+                  >
+                    {prog.cta}
+                  </Button>
                 </div>
-                <ul className="mb-8 flex-1 space-y-3">
-                  {pkg.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3 text-sm">
-                      <span className="mt-0.5 text-gold">✓</span>
-                      <span className="text-foreground-secondary">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button
-                  href="/contact"
-                  variant={pkg.highlight ? "primary" : "secondary"}
-                  className="w-full"
-                >
-                  Book Now
-                </Button>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Coaches */}
+      {/* Coaches Section */}
       <section className="section-padding">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
-            label="Our Team"
-            title="Learn From The Best"
-            subtitle="Our coaches combine deep chess knowledge with proven teaching methods."
+            label="Master Coaches"
+            title="Learn From Tilted Professionals"
+            subtitle="Our coaches are experienced grandmasters and international masters committed to your growth."
           />
 
           <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {coaches.map((coach) => (
-              <Card key={coach.name} className="p-8" id={`coach-${coach.name.split(" ").pop()?.toLowerCase()}`}>
-                <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-gold/10 text-4xl">
-                  {coach.icon}
+            {coaches.map((c) => (
+              <Card key={c.name} className="p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gold/10 text-3xl text-gold">
+                    {c.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">{c.name}</h3>
+                    <p className="text-xs text-gold font-semibold">{c.title} · {c.rating}</p>
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold">{coach.name}</h3>
-                <div className="mt-1 flex items-center gap-3">
-                  <span className="text-sm font-medium text-gold">{coach.title}</span>
-                  <span className="text-foreground-muted">·</span>
-                  <span className="text-sm text-foreground-secondary">{coach.rating}</span>
-                </div>
-                <p className="mt-1 text-xs text-foreground-muted">{coach.specialty}</p>
-                <p className="mt-4 text-sm leading-relaxed text-foreground-secondary">
-                  {coach.bio}
+                <p className="text-xs text-foreground-muted font-medium mb-3">Specialty: {c.specialty}</p>
+                <p className="text-sm leading-relaxed text-foreground-secondary">
+                  {c.bio}
                 </p>
               </Card>
             ))}
@@ -217,22 +235,18 @@ export default function CoachingPage() {
       <section className="section-padding border-t border-border bg-background-secondary">
         <div className="mx-auto max-w-3xl">
           <SectionHeading
-            label="FAQ"
-            title="Frequently Asked Questions"
-            subtitle="Everything you need to know about our coaching services."
+            label="Coaching FAQ"
+            title="Got Questions?"
           />
 
           <div className="mt-12 space-y-4">
             {faqs.map((faq) => (
-              <div
-                key={faq.question}
-                className="rounded-2xl border border-border bg-surface p-6"
-              >
-                <h3 className="font-semibold">{faq.question}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-foreground-secondary">
+              <Card key={faq.question} className="p-6">
+                <h4 className="font-bold">{faq.question}</h4>
+                <p className="mt-2 text-sm text-foreground-secondary leading-relaxed">
                   {faq.answer}
                 </p>
-              </div>
+              </Card>
             ))}
           </div>
         </div>
@@ -241,16 +255,13 @@ export default function CoachingPage() {
       {/* CTA */}
       <section className="section-padding">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl">
-            Ready to Start Your Journey?
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-foreground-secondary">
-            Book a free consultation to discuss your goals and find the perfect
-            coaching plan for you.
+          <h2 className="text-3xl font-bold sm:text-4xl">Start Training Today</h2>
+          <p className="mt-3 text-foreground-secondary">
+            Get in touch to book a diagnostic session or register for school programs.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex justify-center gap-4">
             <Button href="/contact" size="lg">
-              Schedule Free Consultation
+              Book a Diagnostic Session
             </Button>
           </div>
         </div>

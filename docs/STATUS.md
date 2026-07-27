@@ -1,6 +1,6 @@
 # NXChess — Project Status Dashboard
 
-> **Last Updated**: 2026-07-27 · **Current Version**: V1 · **Sprint**: V1 Build & Scaffolding
+> **Last Updated**: 2026-07-27 · **Current Version**: V1 · **Sprint**: V1 UI Build (Chess.com Inspired Theme)
 
 ---
 
@@ -9,24 +9,15 @@
 | # | Task | Agent | Priority | Status | ETA |
 |---|------|-------|----------|--------|-----|
 | 1 | Project scaffolding & documentation | A5 | P0 | ✅ Done | — |
-| 2 | Design system (colors, typography, tokens) | A1 | P0 | ✅ Done | — |
+| 2 | Design system (Chess.com dark charcoal & green `#81b64c` + blue tech accents) | A1 | P0 | ✅ Done | — |
 | 3 | Shared layout (Header, Footer, Nav) | A1 | P0 | ✅ Done | — |
-| 4 | Home page | A1 + A3 | P0 | ✅ Done | — |
-| 5 | Coaching page | A1 + A3 | P0 | ✅ Done | — |
-| 6 | Shop page | A1 + A3 | P0 | ✅ Done | — |
-| 7 | Contact page | A1 + A3 | P0 | ✅ Done | — |
-| 8 | Vercel deployment | A5 | P0 | ⬜ Not Started | — |
-| 9 | QA & Lighthouse audit | A4 | P1 | ⬜ Not Started | — |
-
-### Status Legend
-
-| Icon | Meaning |
-|------|---------|
-| ⬜ | Not Started |
-| 🔵 | In Progress |
-| 🟡 | Blocked / Waiting |
-| ✅ | Done |
-| ❌ | Cancelled |
+| 4 | Home page (Slogan: "The Next Generation of Chess", Hero, Services, Store, Why NXChess) | A1 + A3 | P0 | ✅ Done | — |
+| 5 | Coaching page (Kids Chess Lessons, Private Coaching, School Programs) | A1 + A3 | P0 | ✅ Done | — |
+| 6 | Shop page (Chess Boards, Accessories, Product Cards, Filters) | A1 + A3 | P0 | ✅ Done | — |
+| 7 | About page (NXChess Story, Mission & Core Values) | A1 + A3 | P0 | ✅ Done | — |
+| 8 | Contact page (WhatsApp Direct Chat button & Form Layout) | A1 + A3 | P0 | ✅ Done | — |
+| 9 | Vercel deployment | A5 | P0 | ⬜ Not Started | — |
+| 10 | QA & Audit | A4 | P1 | ⬜ Not Started | — |
 
 ---
 
@@ -34,9 +25,9 @@
 
 | Agent | Role | Tasks Done | In Progress | Blocked |
 |-------|------|------------|-------------|---------|
-| **A1** | Frontend Designer | 6 | 0 | 0 |
+| **A1** | Frontend Designer | 8 | 0 | 0 |
 | **A2** | Backend Developer | 0 | 0 | 0 |
-| **A3** | Content Manager | 4 | 0 | 0 |
+| **A3** | Content Manager | 5 | 0 | 0 |
 | **A4** | QA Tester | 0 | 0 | 0 |
 | **A5** | DevOps Agent | 1 | 0 | 0 |
 
@@ -46,16 +37,14 @@
 
 | Blocker | Affects | Owner | Status |
 |---------|---------|-------|--------|
-| GitHub push needs manual auth | Deployment pipeline | A5 | 🟡 Waiting on user |
+| GitHub push needs manual auth | Deployment pipeline | A5 | 🟡 Ready for push |
 
 ---
 
 ## 📋 Up Next (Queue)
 
-Tasks ready to be picked up, in priority order:
-
-1. **[A5] Vercel Deployment** — Connect repository to Vercel and deploy.
-2. **[A4] QA & Audit** — Perform lighthouse audit, verify accessibility, and fix console warnings if any.
+1. **[A5] Vercel Deployment** — Deploy V1 production site on Vercel.
+2. **[A4] QA & Lighthouse Audit** — Perform performance and accessibility audit.
 
 ---
 
@@ -64,11 +53,10 @@ Tasks ready to be picked up, in priority order:
 | # | Decision | Made By | Date | Context |
 |---|----------|---------|------|---------|
 | ADR-001 | Use Next.js 16 App Router | Lead Architect | 2026-07-27 | Latest stable, supports RSC, Tailwind v4 |
-| ADR-002 | Use Tailwind CSS v4 (not v3) | Lead Architect | 2026-07-27 | Ships with create-next-app, `@import` syntax |
-| ADR-003 | Server Components by default | Lead Architect | 2026-07-27 | Better performance, `"use client"` only when needed |
-| ADR-004 | Static content for V1 | Lead Architect | 2026-07-27 | No database until V2, all data in constants.ts |
-| ADR-005 | Supabase for V2 backend | Lead Architect | 2026-07-27 | Auth + DB + Storage in one, Vercel integration |
-| ADR-006 | Client Component for Contact Form | Lead Architect | 2026-07-27 | Handles interactive form submission feedback locally |
+| ADR-002 | Use Tailwind CSS v4 | Lead Architect | 2026-07-27 | Uses `@import "tailwindcss"` syntax |
+| ADR-003 | Chess.com Dark Charcoal & Green Palette | Agent 1 | 2026-07-27 | Dark charcoal `#262421` background, `#81b64c` green play buttons, electric tech blue `#38bdf8` accents |
+| ADR-004 | WhatsApp Direct Integration | Agent 1 | 2026-07-27 | Direct `https://wa.me/...` action button for client inquiries |
+
 
 ---
 

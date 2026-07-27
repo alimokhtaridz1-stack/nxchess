@@ -11,6 +11,44 @@ Format:
 - Why / context
 ```
 
+## [2026-07-27] Agent 1 (Frontend Designer) — Chess.com Palette Redesign & V1 Requirements
+
+**Summary**: Upgraded the design system to a Chess.com-inspired dark charcoal (`#262421`) theme with vibrant Chess.com green (`#81b64c`) CTA buttons, gold accents, and electric tech blue accents (`#38bdf8`). Implemented the About Page (`/about`), WhatsApp direct chat integration, and updated all content to highlight the brand slogan "The Next Generation of Chess".
+
+### What was done
+
+- [x] **Design System Update (`globals.css`)**:
+  - Theme colors: Dark charcoal (`#262421`), warm surface (`#312e2b`), iconic Chess.com Green (`#81b64c`), Gold (`#f2c94c`), and Electric Tech Blue (`#38bdf8`).
+  - Added green, gold, and tech blue glow & gradient utilities.
+- [x] **Components (`Button.tsx`)**:
+  - Added 3D-styled primary green play button, gold store button, tech blue button, and WhatsApp green button.
+- [x] **New About Page (`/about`)**:
+  - Implemented NXChess Story, Mission statement, Core Values, and CTAs.
+- [x] **Coaching Page (`/coaching`)**:
+  - Updated structure to explicitly highlight: Kids Chess Lessons, Private Coaching, and School Programs.
+- [x] **Shop Page (`/shop`)**:
+  - Updated product grid featuring handcrafted wooden Chess Boards, official Staunton sets, and Digital Tech accessories.
+- [x] **Contact Page (`/contact`)**:
+  - Added direct WhatsApp Chat action button and inquiry form.
+- [x] **Home Page (`/`)**:
+  - Integrated slogan "The Next Generation of Chess", hero, featured store grid, services overview, and why NXChess checklist.
+- [x] **Build Verification**:
+  - `npm run build`: ✅ 8/8 static routes prerendered with zero errors.
+
+### Files Modified & Created
+
+- `src/app/globals.css` (Modified) — Chess.com palette and utility tokens
+- `src/components/ui/Button.tsx` (Modified) — Green primary play button & WhatsApp variants
+- `src/lib/constants.ts` (Modified) — Added slogan, WhatsApp links, and About link
+- `src/app/about/page.tsx` (Created) — Complete About page
+- `src/app/page.tsx` (Modified) — Slogan, tech badges, and featured products
+- `src/app/coaching/page.tsx` (Modified) — Kids, Private, and School programs
+- `src/app/shop/page.tsx` (Modified) — Chess boards and accessories grid
+- `src/app/contact/page.tsx` (Modified) — WhatsApp integration and contact form
+- `docs/STATUS.md` & `docs/CHANGELOG.md` (Modified) — System tracking logs
+
+---
+
 ## [2026-07-27] Agent 1 + 3 (Design / Content / Lead) — Full V1 Website Implementation
 
 **Summary**: Designed and built the complete V1 client website using a premium dark chess theme, custom layout components, reusable UI primitives, and 4 content-complete routes. Verified all interactions in browser.

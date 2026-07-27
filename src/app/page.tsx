@@ -1,35 +1,88 @@
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { SITE_NAME } from "@/lib/constants";
+import { SITE_NAME, SITE_SLOGAN } from "@/lib/constants";
 
-const features = [
+const featuredProducts = [
+  {
+    id: "1",
+    name: "Staunton Tournament Set",
+    category: "Chess Sets",
+    price: "$89.99",
+    tag: "Best Seller",
+    icon: "♚",
+    badgeColor: "bg-chess-green/20 text-chess-green-light border-chess-green/40",
+  },
+  {
+    id: "2",
+    name: "Solid Walnut Board",
+    category: "Boards",
+    price: "$129.99",
+    tag: "Handcrafted",
+    icon: "♝",
+    badgeColor: "bg-gold/20 text-gold border-gold/40",
+  },
+  {
+    id: "3",
+    name: "NX Digital Pro Timer",
+    category: "Accessories",
+    price: "$54.99",
+    tag: "Tech Edition",
+    icon: "⏱",
+    badgeColor: "bg-tech-blue/20 text-tech-blue-light border-tech-blue/40",
+  },
+];
+
+const services = [
   {
     icon: "♟",
-    title: "Expert Coaching",
+    title: "Kids & Youth Coaching",
     description:
-      "Learn from titled players and experienced coaches with personalized training plans tailored to your skill level.",
+      "Fun, structured chess lessons designed specifically for children to develop logic, patience, and concentration.",
     href: "/coaching",
   },
   {
-    icon: "♜",
-    title: "Premium Products",
+    icon: "♚",
+    title: "Private 1-on-1 Coaching",
     description:
-      "Curated selection of high-quality chess sets, boards, clocks, and accessories for the discerning player.",
-    href: "/shop",
+      "Personalized instruction with titled masters customized to your opening repertoire, middlegame tactics, and endgames.",
+    href: "/coaching",
   },
   {
-    icon: "♛",
-    title: "Digital Innovation",
+    icon: "🏫",
+    title: "School Programs",
     description:
-      "AI-powered analysis, interactive courses, and cutting-edge tools to accelerate your chess improvement.",
-    href: "/contact",
+      "Turnkey chess curriculum, club management, and tournament organization for schools and institutions.",
+    href: "/coaching",
+  },
+];
+
+const whyReasons = [
+  {
+    title: "AI-Powered Analysis",
+    desc: "Combine grandmaster intuition with computer engine precision to spot your tactical mistakes.",
+    isTech: true,
+  },
+  {
+    title: "Personalized Training",
+    desc: "Custom learning roadmaps crafted for your rating goals, whether 1000 Elo or 2200 Elo.",
+    isTech: false,
+  },
+  {
+    title: "Tournament Gear",
+    desc: "Weighted pieces, handcrafted wooden boards, and digital timers built to FIDE standards.",
+    isTech: false,
+  },
+  {
+    title: "Global Community",
+    desc: "Connect with players worldwide, participate in interactive events, and track your rating progress.",
+    isTech: true,
   },
 ];
 
 const stats = [
-  { value: "500+", label: "Students Trained" },
-  { value: "15+", label: "Expert Coaches" },
+  { value: "500+", label: "Active Students" },
+  { value: "15+", label: "Titled Coaches" },
   { value: "98%", label: "Satisfaction Rate" },
   { value: "50+", label: "Premium Products" },
 ];
@@ -38,58 +91,58 @@ export default function Home() {
   return (
     <main>
       {/* ============================================
-          Hero Section
+          Hero Section — Chess.com Inspired Dark + Green Accent
           ============================================ */}
       <section className="relative overflow-hidden section-padding">
-        {/* Background glow */}
-        <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gold/5 rounded-full blur-3xl" />
+        {/* Background glow flares */}
+        <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-chess-green/10 rounded-full blur-3xl" />
+        <div className="pointer-events-none absolute top-20 right-10 w-[400px] h-[400px] bg-tech-blue/5 rounded-full blur-3xl" />
 
         <div className="relative mx-auto max-w-5xl text-center">
-          {/* Badge */}
-          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-gold/20 bg-gold/5 px-4 py-2">
-            <span className="h-2 w-2 rounded-full bg-gold animate-pulse" />
-            <span className="text-sm font-medium text-gold">
-              Now Accepting Students
+          {/* Tech Badge */}
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-chess-green/40 bg-chess-green/10 px-4 py-2">
+            <span className="h-2 w-2 rounded-full bg-chess-green animate-pulse" />
+            <span className="text-xs font-bold uppercase tracking-wider text-chess-green-light">
+              {SITE_SLOGAN}
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
-            Elevate Your
-            <br />
-            <span className="text-gradient-gold">Chess Game</span>
+          <h1 className="text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+            Welcome to <span className="text-gradient-green">{SITE_NAME}</span>
           </h1>
 
-          {/* Subheadline */}
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-foreground-secondary sm:text-xl">
-            {SITE_NAME} brings together world-class coaching, premium equipment,
-            and innovative technology to help you master the royal game.
+            Play better, train smarter, and equip your game. Experience world-class coaching, handcrafted chess sets, and next-generation tech analysis.
           </p>
 
           {/* CTA Buttons */}
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Button href="/coaching" size="lg">
-              Start Learning
+            <Button href="/coaching" size="lg" variant="primary">
+              <span>▶ Play & Learn Coaching</span>
             </Button>
-            <Button href="/shop" variant="secondary" size="lg">
-              Browse Shop
+            <Button href="/shop" variant="gold" size="lg">
+              <span>🛒 Browse Shop</span>
+            </Button>
+            <Button href="/about" variant="outline" size="lg">
+              Our Story
             </Button>
           </div>
         </div>
       </section>
 
       {/* ============================================
-          Stats Section
+          Stats Bar
           ============================================ */}
       <section className="border-y border-border bg-background-secondary">
-        <div className="mx-auto max-w-5xl px-6 py-12">
+        <div className="mx-auto max-w-5xl px-6 py-10">
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-3xl font-bold text-gold sm:text-4xl">
+                <div className="text-3xl font-extrabold text-chess-green-light sm:text-4xl">
                   {stat.value}
                 </div>
-                <div className="mt-1 text-sm text-foreground-secondary">
+                <div className="mt-1 text-xs sm:text-sm text-foreground-secondary uppercase tracking-wider font-semibold">
                   {stat.label}
                 </div>
               </div>
@@ -99,34 +152,33 @@ export default function Home() {
       </section>
 
       {/* ============================================
-          Features Section
+          Services Section
           ============================================ */}
       <section className="section-padding">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
-            label="What We Offer"
-            title="Everything You Need to Excel"
-            subtitle="From beginner to grandmaster, we provide the tools and guidance to take your chess to the next level."
+            label="Our Services"
+            title="Coaching Programs for Every Level"
+            subtitle="Tailored learning for kids, private students, and school institutions."
           />
 
           <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {features.map((feature) => (
-              <Card key={feature.title} className="p-8 text-center" id={`feature-${feature.title.toLowerCase().replace(/\s/g, "-")}`}>
-                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gold/10 text-3xl">
-                  {feature.icon}
+            {services.map((s) => (
+              <Card key={s.title} className="p-8 text-center flex flex-col justify-between hover:border-chess-green/50 transition-all">
+                <div>
+                  <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-surface-elevated text-3xl text-chess-green-light">
+                    {s.icon}
+                  </div>
+                  <h3 className="text-xl font-bold">{s.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-foreground-secondary">
+                    {s.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold">{feature.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-foreground-secondary">
-                  {feature.description}
-                </p>
-                <Button
-                  href={feature.href}
-                  variant="ghost"
-                  size="sm"
-                  className="mt-6"
-                >
-                  Learn More →
-                </Button>
+                <div className="mt-8">
+                  <Button href={s.href} variant="outline" size="sm">
+                    Learn More →
+                  </Button>
+                </div>
               </Card>
             ))}
           </div>
@@ -134,41 +186,80 @@ export default function Home() {
       </section>
 
       {/* ============================================
-          Why NXChess Section
+          Featured Products Section
           ============================================ */}
       <section className="section-padding border-t border-border bg-background-secondary">
         <div className="mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-            {/* Left — Content */}
+          <SectionHeading
+            label="Featured Store"
+            title="Popular Chess Gear & Equipment"
+            subtitle="Explore high-quality Staunton sets, wooden boards, and digital clocks."
+          />
+
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3">
+            {featuredProducts.map((p) => (
+              <Card key={p.id} className="p-6 flex flex-col justify-between hover:border-gold/40">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-foreground-muted">
+                      {p.category}
+                    </span>
+                    <span className={`text-xs px-2.5 py-1 rounded-full font-bold border ${p.badgeColor}`}>
+                      {p.tag}
+                    </span>
+                  </div>
+                  <div className="h-36 flex items-center justify-center text-6xl my-2 bg-surface-elevated rounded-2xl border border-border">
+                    {p.icon}
+                  </div>
+                  <h3 className="text-lg font-bold mt-4">{p.name}</h3>
+                </div>
+                <div className="mt-6 flex items-center justify-between border-t border-border pt-4">
+                  <span className="text-xl font-extrabold text-gold">{p.price}</span>
+                  <Button href="/shop" size="sm" variant="gold">
+                    View Product
+                  </Button>
+                </div>
+              </Card>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Button href="/shop" variant="secondary" size="md">
+              View All Products in Shop →
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
+          Why NXChess Section
+          ============================================ */}
+      <section className="section-padding">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div>
               <SectionHeading
                 label="Why NXChess"
-                title="Built for Players Who Demand Excellence"
+                title="Chess Mastered for the Modern Era"
                 align="left"
               />
               <div className="mt-8 space-y-6">
-                {[
-                  {
-                    title: "Personalized Approach",
-                    desc: "Every student gets a customized training program designed around their strengths, weaknesses, and goals.",
-                  },
-                  {
-                    title: "Proven Results",
-                    desc: "Our students consistently improve their ratings, with an average gain of 200+ Elo points within 6 months.",
-                  },
-                  {
-                    title: "Modern Methods",
-                    desc: "We combine classical chess wisdom with AI analysis and data-driven insights for maximum improvement.",
-                  },
-                ].map((item) => (
-                  <div key={item.title} className="flex gap-4">
-                    <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold/20 text-gold text-xs">
+                {whyReasons.map((reason) => (
+                  <div key={reason.title} className="flex gap-4">
+                    <div className={`mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-xs font-bold ${reason.isTech ? "bg-tech-blue/20 text-tech-blue-light border border-tech-blue/30" : "bg-chess-green/20 text-chess-green-light border border-chess-green/30"}`}>
                       ✓
                     </div>
                     <div>
-                      <h4 className="font-semibold">{item.title}</h4>
+                      <h4 className="font-bold flex items-center gap-2">
+                        {reason.title}
+                        {reason.isTech && (
+                          <span className="text-[10px] px-2 py-0.5 rounded bg-tech-blue/20 text-tech-blue-light font-bold">
+                            TECH
+                          </span>
+                        )}
+                      </h4>
                       <p className="mt-1 text-sm leading-relaxed text-foreground-secondary">
-                        {item.desc}
+                        {reason.desc}
                       </p>
                     </div>
                   </div>
@@ -176,45 +267,43 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right — Visual */}
             <div className="relative">
-              <div className="aspect-square rounded-3xl border border-border bg-surface p-8 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-8xl mb-4">♚</div>
-                  <p className="text-foreground-secondary text-sm">
-                    Master the Royal Game
-                  </p>
+              <Card glow className="p-8 text-center border-chess-green/30 relative overflow-hidden bg-surface">
+                <div className="text-7xl mb-4 text-gradient-green">♚</div>
+                <h3 className="text-2xl font-bold">{SITE_SLOGAN}</h3>
+                <p className="mt-3 text-sm text-foreground-secondary max-w-md mx-auto">
+                  Experience grandmaster-led instruction combined with cutting-edge tools.
+                </p>
+                <div className="mt-8 inline-flex items-center gap-2 text-xs font-mono text-chess-green-light bg-chess-green/10 px-4 py-2 rounded-lg border border-chess-green/30">
+                  <span>● ONLINE PLATFORM</span>
+                  <span>·</span>
+                  <span>V1 ACTIVE</span>
                 </div>
-              </div>
-              {/* Decorative glow */}
-              <div className="pointer-events-none absolute -inset-4 -z-10 rounded-3xl bg-gold/5 blur-2xl" />
+              </Card>
             </div>
           </div>
         </div>
       </section>
 
       {/* ============================================
-          CTA Section
+          CTA Banner
           ============================================ */}
-      <section className="section-padding">
+      <section className="section-padding border-t border-border bg-background-secondary">
         <div className="mx-auto max-w-4xl">
-          <Card glow className="relative overflow-hidden p-12 text-center sm:p-16">
-            <div className="relative z-10">
-              <h2 className="text-3xl font-bold sm:text-4xl">
-                Ready to Make Your Move?
-              </h2>
-              <p className="mx-auto mt-4 max-w-xl text-foreground-secondary">
-                Join hundreds of players who have transformed their chess game
-                with {SITE_NAME}. Start your journey today.
-              </p>
-              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-                <Button href="/coaching" size="lg">
-                  Book a Session
-                </Button>
-                <Button href="/shop" variant="outline" size="lg">
-                  Explore Products
-                </Button>
-              </div>
+          <Card glow className="p-10 sm:p-14 text-center border-chess-green/30 relative">
+            <h2 className="text-3xl font-extrabold sm:text-4xl">
+              Ready to Upgrade Your Game?
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-foreground-secondary">
+              Book a coaching session or chat with our team directly on WhatsApp.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button href="/coaching" size="lg" variant="primary">
+                Book a Session
+              </Button>
+              <Button href="/contact" variant="whatsapp" size="lg">
+                💬 Chat on WhatsApp
+              </Button>
             </div>
           </Card>
         </div>

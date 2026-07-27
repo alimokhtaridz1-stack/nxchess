@@ -2,8 +2,9 @@
 // Agent scope: Shared (all agents may read, coordinate writes)
 
 export const SITE_NAME = "NXChess";
+export const SITE_SLOGAN = "The Next Generation of Chess";
 export const SITE_DESCRIPTION =
-  "A modern chess platform combining chess coaching, products, and technology.";
+  "The Next Generation of Chess. Combining world-class coaching, premium equipment, and cutting-edge technology.";
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://nxchess.com";
 
 // Navigation Links
@@ -11,19 +12,22 @@ export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Coaching", href: "/coaching" },
   { label: "Shop", href: "/shop" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
-// Social Links (update when ready)
+// Social Links & External Contacts
 export const SOCIAL_LINKS = {
   twitter: "#",
   instagram: "#",
   youtube: "#",
+  whatsapp: "https://wa.me/15551234567?text=Hello%20NXChess%2C%20I%20am%20interested%20in...",
 } as const;
 
-// Contact Info (update when ready)
+// Contact Info
 export const CONTACT_INFO = {
   email: "info@nxchess.com",
-  phone: "",
-  address: "",
+  phone: "+1 (555) 123-4567",
+  whatsappNumber: "+1 (555) 123-4567",
+  address: "Global Online Platform",
 } as const;
