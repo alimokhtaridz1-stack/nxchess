@@ -32,8 +32,8 @@ const learningPlans = [
   {
     id: "kids",
     title: "Kids Chess Lessons",
-    price: "$45",
-    period: "/ session",
+    price: "$350",
+    period: "/ package",
     badge: "Youth Program",
     isFeatured: false,
     description:
@@ -45,14 +45,14 @@ const learningPlans = [
       "Weekly parent progress reports",
       "Self-learning platform access included",
     ],
-    cta: "Enroll Kids Lessons",
+    cta: "Enroll Kids Lessons ($350)",
     btnVariant: "gold" as const,
   },
   {
     id: "private",
     title: "Private Master Coaching",
-    price: "$75",
-    period: "/ session",
+    price: "$650",
+    period: "/ package",
     badge: "Intensive 1-on-1",
     isFeatured: false,
     description:
@@ -64,7 +64,7 @@ const learningPlans = [
       "Priority scheduling & session recordings",
       "Full self-learning platform access",
     ],
-    cta: "Book Private Coaching",
+    cta: "Book Private Coaching ($650)",
     btnVariant: "tech" as const,
   },
 ];
