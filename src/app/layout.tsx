@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import StickyCtaBar from "@/components/ui/StickyCtaBar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,11 +17,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "NXChess — Modern Chess Platform",
+    default: "NXChess — The Next Generation of Chess",
     template: "%s | NXChess",
   },
   description:
-    "Elevate your chess game with premium coaching, curated products, and cutting-edge technology. NXChess is the modern chess platform for players of all levels.",
+    "The Next Generation of Chess. Premier chess academy combining structured 8-level piece curriculum, master coaching, self-learning digital modules, and tournament equipment.",
 };
 
 export default function RootLayout({
@@ -33,10 +34,11 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body className="min-h-full flex flex-col bg-background text-foreground pb-16">
         <Header />
         <div className="flex-1 pt-16">{children}</div>
         <Footer />
+        <StickyCtaBar />
       </body>
     </html>
   );

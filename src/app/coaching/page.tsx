@@ -1,14 +1,16 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { CURRICULUM_LEVELS } from "@/lib/constants";
-
-export const metadata: Metadata = {
-  title: "Coaching & Learning Plans",
-  description:
-    "Explore NXChess 8-level piece curriculum, $20/mo Self-Learning Membership, Kids Lessons ($350), Private Coaching ($650), and Intensive Chess Camps.",
-};
+import PlacementQuiz from "@/components/ui/PlacementQuiz";
+import BookingModal from "@/components/ui/BookingModal";
+import {
+  CURRICULUM_LEVELS,
+  VERIFIABLE_COACHES,
+  EXPANDED_FAQS,
+} from "@/lib/constants";
 
 const learningPlans = [
   {
@@ -94,61 +96,9 @@ const chessCamp = {
   cta: "Reserve Camp Spot",
 };
 
-const coaches = [
-  {
-    name: "GM Alexander Petrov",
-    title: "Head Coach",
-    rating: "2580 FIDE",
-    trait: "Resilient & Strategic",
-    funFact: "Enthusiastic endgame researcher",
-    specialty: "Positional Mastery & Strategy",
-    bio: "Former national champion with 20+ years of coaching experience. Has trained top grandmasters and youth prodigies.",
-    icon: "♔",
-    color: "text-gold-light bg-gold/15 border-gold/30",
-  },
-  {
-    name: "IM Sofia Chen",
-    title: "Senior Master Coach",
-    rating: "2410 FIDE",
-    specialty: "Tactics & Opening Preparation",
-    trait: "Creative & Fast-Paced",
-    funFact: "Loves tactical sacrifices and blitz analysis",
-    bio: "International Master and certified educator known for creative tactical training methods and opening analysis.",
-    icon: "♕",
-    color: "text-chess-green-light bg-chess-green/15 border-chess-green/30",
-  },
-  {
-    name: "FM David Torres",
-    title: "Youth Program Director",
-    rating: "2320 FIDE",
-    specialty: "Kids Development & Fundamentals",
-    trait: "Patient & Inspiring",
-    funFact: "Has coached over 300 youth tournament medalists",
-    bio: "Dedicated youth coach who has introduced over 300 children to competitive chess and state championships.",
-    icon: "♗",
-    color: "text-tech-blue-light bg-tech-blue/15 border-tech-blue/30",
-  },
-];
-
-const faqs = [
-  {
-    question: "How do students progress through the 8 Curriculum Levels?",
-    answer:
-      "Students start with a diagnostic session and are placed in the appropriate level (from Level 1 Pawn to Level 8 King). Progress is tracked via module evaluations and periodic performance reports.",
-  },
-  {
-    question: "Is there online match playing on NXChess?",
-    answer:
-      "No. NXChess is dedicated exclusively to chess learning, 1-on-1 coaching, self-paced courses, and premium equipment. We do not host public match playing servers.",
-  },
-  {
-    question: "What is included in the $20/month Self-Learning Membership?",
-    answer:
-      "For $20/month, you get complete access to our digital self-learning course library, interactive tactical modules, study roadmaps, AND 1 live 1-on-1 coaching session with a master instructor every month!",
-  },
-];
-
 export default function CoachingPage() {
+  const [selectedPlanForModal, setSelectedPlanForModal] = useState<string | null>(null);
+
   return (
     <main className="overflow-x-hidden">
       {/* Hero */}
@@ -228,7 +178,7 @@ export default function CoachingPage() {
 
                 <div className="mt-6 pt-4 border-t border-border">
                   <Button
-                    href="/contact"
+                    onClick={() => setSelectedPlanForModal(plan.id)}
                     variant={plan.btnVariant}
                     className="w-full"
                     size="lg"
@@ -242,8 +192,15 @@ export default function CoachingPage() {
         </div>
       </section>
 
+      {/* Interactive Level Placement Quiz */}
+      <section className="section-padding border-t border-border bg-background relative">
+        <div className="mx-auto max-w-4xl">
+          <PlacementQuiz />
+        </div>
+      </section>
+
       {/* 8-Level Piece Curriculum Breakdown */}
-      <section className="section-padding relative">
+      <section className="section-padding relative border-t border-border bg-background-secondary">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             label="Step-by-Step System"
@@ -274,7 +231,7 @@ export default function CoachingPage() {
       </section>
 
       {/* Seasonal Chess Camp Section */}
-      <section className="section-padding border-t border-border bg-background-secondary relative">
+      <section className="section-padding relative">
         <div className="mx-auto max-w-5xl">
           <Card className="p-10 border-gold/40 bg-surface flex flex-col lg:flex-row items-center justify-between gap-8 hover-glow-gold">
             <div>
@@ -293,44 +250,52 @@ export default function CoachingPage() {
                 ))}
               </ul>
             </div>
-            <Button href="/contact" variant="gold" size="lg" className="shrink-0">
+            <Button onClick={() => setSelectedPlanForModal("camp")} variant="gold" size="lg" className="shrink-0">
               {chessCamp.cta}
             </Button>
           </Card>
         </div>
       </section>
 
-      {/* Coaches Section with Traits & Fun Facts */}
-      <section className="section-padding">
+      {/* Verified Master Coaches Section (Typo Fixed: Titled Professionals) */}
+      <section className="section-padding border-t border-border bg-background-secondary">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
-            label="Meet The Team"
-            title="Learn From Tilted Professionals"
-            subtitle="Our coaches bring international experience, patience, and proven teaching methods."
+            label="Verified Faculty"
+            title="Learn From Titled Professionals"
+            subtitle="All NXChess master coaches hold verified FIDE titles, official ratings, and proven youth coaching records."
           />
 
           <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {coaches.map((c) => (
-              <Card key={c.name} className="p-8 hover-glow-green bg-surface flex flex-col justify-between">
+            {VERIFIABLE_COACHES.map((c) => (
+              <Card key={c.id} className="p-8 hover-glow-green bg-surface flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className={`flex h-14 w-14 items-center justify-center rounded-2xl border text-3xl shadow-md ${c.color}`}>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-chess-green/15 text-chess-green-light text-2xl border border-chess-green/30">
                       {c.icon}
                     </div>
-                    <div>
-                      <h3 className="font-bold text-lg text-foreground">{c.name}</h3>
-                      <p className="text-xs text-chess-green-light font-bold">{c.title} · {c.rating}</p>
-                    </div>
+                    <a
+                      href={c.fideLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-bold text-tech-blue-light hover:underline bg-tech-blue/10 px-2.5 py-1 rounded-md border border-tech-blue/30"
+                    >
+                      Official FIDE Profile ↗
+                    </a>
                   </div>
-                  <div className="my-3 space-y-1">
-                    <div className="text-xs text-foreground font-semibold">
-                      Style: <span className="text-gold-light">{c.trait}</span>
-                    </div>
-                    <div className="text-xs text-foreground-muted">
-                      Fun Fact: <span className="text-foreground-secondary">{c.funFact}</span>
-                    </div>
+
+                  <h3 className="font-bold text-xl text-foreground">{c.name}</h3>
+                  <div className="text-xs text-chess-green-light font-extrabold mt-0.5 mb-2">
+                    {c.title} · <span className="text-gold-light">{c.rating}</span>
                   </div>
-                  <p className="text-sm leading-relaxed text-foreground-secondary border-t border-border pt-3">
+
+                  <div className="space-y-1.5 text-xs text-foreground-secondary mb-4 border-t border-border pt-3">
+                    <div><strong>Experience:</strong> {c.experience}</div>
+                    <div><strong>Languages:</strong> {c.languages.join(", ")}</div>
+                    <div><strong>Achievements:</strong> {c.achievements}</div>
+                  </div>
+
+                  <p className="text-xs leading-relaxed text-foreground-secondary border-t border-border pt-3">
                     {c.bio}
                   </p>
                 </div>
@@ -340,16 +305,17 @@ export default function CoachingPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding border-t border-border bg-background-secondary">
+      {/* Expanded FAQ */}
+      <section className="section-padding">
         <div className="mx-auto max-w-3xl">
           <SectionHeading
-            label="FAQ"
+            label="Coaching FAQ"
             title="Frequently Asked Questions"
+            subtitle="Everything you need to know about pricing, placement, class length, and coach verification."
           />
 
           <div className="mt-12 space-y-4">
-            {faqs.map((faq) => (
+            {EXPANDED_FAQS.map((faq) => (
               <Card key={faq.question} className="p-6 bg-surface hover:border-chess-green/40">
                 <h4 className="font-bold text-foreground">{faq.question}</h4>
                 <p className="mt-2 text-sm text-foreground-secondary leading-relaxed">
@@ -360,6 +326,13 @@ export default function CoachingPage() {
           </div>
         </div>
       </section>
+
+      {/* Interactive Booking Modal Trigger */}
+      <BookingModal
+        isOpen={selectedPlanForModal !== null}
+        onClose={() => setSelectedPlanForModal(null)}
+        defaultProgram={selectedPlanForModal || "self-learning"}
+      />
     </main>
   );
 }

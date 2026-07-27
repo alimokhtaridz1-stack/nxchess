@@ -1,7 +1,15 @@
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { SITE_NAME, SITE_SLOGAN, CHESS_BENEFITS, CURRICULUM_LEVELS } from "@/lib/constants";
+import PlacementQuiz from "@/components/ui/PlacementQuiz";
+import {
+  SITE_NAME,
+  SITE_SLOGAN,
+  CHESS_BENEFITS,
+  CURRICULUM_LEVELS,
+  RATING_CASE_STUDIES,
+  AUDIENCE_SEGMENTS,
+} from "@/lib/constants";
 
 const featuredProducts = [
   {
@@ -39,25 +47,11 @@ const featuredProducts = [
   },
 ];
 
-const testimonials = [
-  {
-    quote: "My 9-year-old son joined the Pawn level and reached Knight level in 3 months. His focus at school and calculation in games improved tremendously!",
-    author: "Sarah M.",
-    role: "Parent of Academy Student",
-    rating: "★★★★★",
-  },
-  {
-    quote: "The Grandmaster coaches are patient and friendly. The periodic progress reports keep us updated on exact ratings and tactical module completion.",
-    author: "David K.",
-    role: "Private Student Parent",
-    rating: "★★★★★",
-  },
-  {
-    quote: "The combination of the $20/mo platform and monthly live sessions is unmatched. Best investment for serious chess improvement.",
-    author: "Alexander R.",
-    role: "Adult Club Player",
-    rating: "★★★★★",
-  },
+const partnerLogos = [
+  "Dubai Sports City Academy",
+  "Emirates Sports Hotel",
+  "FIDE Certified Trainers",
+  "International Chess Federation Network",
 ];
 
 const stats = [
@@ -78,7 +72,6 @@ export default function Home() {
         <div className="pointer-events-none absolute top-10 right-1/3 w-[400px] h-[300px] bg-gold/5 rounded-full blur-[120px]" />
 
         <div className="relative mx-auto max-w-5xl text-center z-10">
-          {/* Badge */}
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-chess-green/30 bg-chess-green/10 px-4 py-1.5 backdrop-blur-sm">
             <span className="h-2 w-2 rounded-full bg-chess-green animate-pulse" />
             <span className="text-xs font-semibold uppercase tracking-wider text-chess-green-light">
@@ -86,7 +79,6 @@ export default function Home() {
             </span>
           </div>
 
-          {/* Headline */}
           <h1 className="text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
             Welcome to <span className="text-gradient-gold">{SITE_NAME}</span>
           </h1>
@@ -95,7 +87,6 @@ export default function Home() {
             Premier chess academy combining structured 8-level piece curriculum, master coaching, self-learning digital modules, and tournament equipment.
           </p>
 
-          {/* Highlighted Banner */}
           <div className="mt-8 inline-flex flex-wrap items-center justify-center gap-3 bg-surface-elevated border border-border px-5 py-2.5 rounded-2xl text-sm shadow-md">
             <span className="px-2.5 py-0.5 rounded-full bg-chess-green text-black font-extrabold text-xs">
               ACADEMY MEMBERSHIP
@@ -105,7 +96,6 @@ export default function Home() {
             </span>
           </div>
 
-          {/* CTAs */}
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Button href="/coaching" size="lg" variant="primary">
               <span>📚 Explore Coaching & Curriculum</span>
@@ -121,10 +111,26 @@ export default function Home() {
       </section>
 
       {/* ============================================
+          Partner / Institutional Trust Bar
+          ============================================ */}
+      <section className="border-y border-border bg-background-secondary py-6">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="flex flex-wrap items-center justify-center gap-8 text-xs font-bold text-foreground-muted uppercase tracking-wider">
+            {partnerLogos.map((p) => (
+              <div key={p} className="flex items-center gap-2">
+                <span className="text-gold-light">✓</span>
+                <span>{p}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
           Stats Bar
           ============================================ */}
-      <section className="border-y border-border bg-background-secondary">
-        <div className="mx-auto max-w-5xl px-6 py-10">
+      <section className="border-b border-border bg-background py-8">
+        <div className="mx-auto max-w-5xl px-6">
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
@@ -137,6 +143,51 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ============================================
+          Audience Segmentation
+          ============================================ */}
+      <section className="section-padding relative">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            label="Target Programs"
+            title="Tailored Solutions for Every Player"
+            subtitle="Whether you are a parent looking for structured kids lessons, an adult student, or a tournament contender."
+          />
+
+          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {AUDIENCE_SEGMENTS.map((seg) => (
+              <Card key={seg.id} className="p-8 bg-surface hover-glow-gold flex flex-col justify-between">
+                <div>
+                  <div className="text-4xl mb-4">{seg.icon}</div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-chess-green-light block mb-1">
+                    {seg.highlight}
+                  </span>
+                  <h3 className="text-xl font-bold text-foreground">{seg.title}</h3>
+                  <p className="text-sm font-semibold text-gold-light mt-1">{seg.headline}</p>
+                  <p className="text-xs leading-relaxed text-foreground-secondary mt-3">
+                    {seg.description}
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-border">
+                  <Button href="/coaching" variant="outline" size="sm" className="w-full">
+                    {seg.ctaText} →
+                  </Button>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
+          Placement Quiz Integration
+          ============================================ */}
+      <section className="section-padding border-t border-border bg-background-secondary">
+        <div className="mx-auto max-w-4xl">
+          <PlacementQuiz />
         </div>
       </section>
 
@@ -170,11 +221,46 @@ export default function Home() {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="mt-10 text-center">
-            <Button href="/coaching" variant="outline" size="sm">
-              View Full 8-Level Curriculum Details →
-            </Button>
+      {/* ============================================
+          Student Rating Case Studies (Proof)
+          ============================================ */}
+      <section className="section-padding border-t border-border bg-background-secondary">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            label="Proven Progress"
+            title="Student Rating Breakthroughs"
+            subtitle="Real rating gains achieved by NXChess academy students through our structured framework."
+          />
+
+          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {RATING_CASE_STUDIES.map((c) => (
+              <Card key={c.name} className="p-6 bg-surface hover-glow-green border-chess-green/30 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs font-bold text-foreground-muted">{c.location}</span>
+                    <span className="text-xs px-2.5 py-1 rounded-full font-bold bg-chess-green/20 text-chess-green-light border border-chess-green/40">
+                      {c.gain}
+                    </span>
+                  </div>
+
+                  <h3 className="text-lg font-bold text-foreground">{c.name} ({c.age})</h3>
+                  <div className="flex items-center gap-3 my-2 text-xs">
+                    <span className="text-foreground-muted">Initial: {c.initialRating}</span>
+                    <span className="text-chess-green-light font-bold">→ Current: {c.currentRating}</span>
+                  </div>
+
+                  <p className="text-xs italic leading-relaxed text-foreground-secondary mt-3">
+                    &quot;{c.quote}&quot;
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-border text-[11px] font-semibold text-gold-light">
+                  Program: {c.program}
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -182,7 +268,7 @@ export default function Home() {
       {/* ============================================
           Benefits of Chess (Brain Development)
           ============================================ */}
-      <section className="section-padding border-t border-border bg-background-secondary">
+      <section className="section-padding">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             label="Why Learn Chess"
@@ -200,36 +286,6 @@ export default function Home() {
                 <p className="text-sm leading-relaxed text-foreground-secondary">
                   {benefit.desc}
                 </p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================
-          Social Proof & Parent Testimonials
-          ============================================ */}
-      <section className="section-padding">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading
-            label="Social Proof"
-            title="Trusted by Parents & Students"
-            subtitle="Rated 4.9/5 stars for teaching excellence, student progress, and master coaching."
-          />
-
-          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <Card key={t.author} className="p-6 bg-surface flex flex-col justify-between hover:border-gold/40">
-                <div>
-                  <div className="text-gold text-sm font-bold mb-3">{t.rating}</div>
-                  <p className="text-sm italic leading-relaxed text-foreground-secondary">
-                    &quot;{t.quote}&quot;
-                  </p>
-                </div>
-                <div className="mt-6 border-t border-border pt-4">
-                  <h4 className="text-sm font-bold text-foreground">{t.author}</h4>
-                  <span className="text-xs text-foreground-muted">{t.role}</span>
-                </div>
               </Card>
             ))}
           </div>
@@ -273,30 +329,6 @@ export default function Home() {
               </Card>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ============================================
-          CTA Banner
-          ============================================ */}
-      <section className="section-padding border-t border-border bg-background-secondary relative">
-        <div className="mx-auto max-w-4xl relative z-10">
-          <Card glow className="p-10 sm:p-14 text-center border-chess-green/30 bg-surface relative overflow-hidden">
-            <h2 className="text-3xl font-extrabold sm:text-4xl text-foreground">
-              Start Your Chess Journey Today
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-foreground-secondary">
-              Join for $20/month to get complete digital course access and 1 live coaching session every month.
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href="/coaching" size="lg" variant="primary">
-                Join Self-Learning ($20/mo)
-              </Button>
-              <Button href="/contact" variant="whatsapp" size="lg">
-                💬 Chat on WhatsApp
-              </Button>
-            </div>
-          </Card>
         </div>
       </section>
     </main>

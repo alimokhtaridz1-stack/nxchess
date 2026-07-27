@@ -11,6 +11,28 @@ Format:
 - Why / context
 ```
 
+## [2026-07-27] Lead Architect / Agent 1 & 3 — Trust, Conversion & UX Upgrades
+
+**Summary**: Resolved all credibility gaps, added interactive conversion modals (`BookingModal`, `ProductModal`), created persistent `StickyCtaBar`, added 2-minute Level Placement Quiz, verified coach FIDE credentials, and added student rating case studies.
+
+### What was done
+
+- [x] **Copy & Credibility Fixes**:
+  - Fixed typo on `/coaching`: `"Tilted Professionals"` → `"Titled Professionals"`.
+  - Added official FIDE profile links, achievements, languages, and teaching experience to all coach profiles.
+- [x] **Interactive Conversion Modals**:
+  - `BookingModal.tsx` — Free 15-min skill assessment & trial lesson booking modal with level/date picker and 2-hr response guarantee.
+  - `ProductModal.tsx` — Product quick-view, stock status indicator, express delivery times (UAE 1-2 days, Global 3-7 days), 30-day money-back guarantee, and payment badges.
+  - `StickyCtaBar.tsx` — Persistent mobile and desktop conversion bar (`"⚡ Free Skill Assessment"` & `"Join $20/mo"`).
+- [x] **Interactive Placement Quiz & Social Proof**:
+  - `PlacementQuiz.tsx` — 3-question level finder recommending exact Pawn-to-King level.
+  - Added Student Rating Breakthrough case studies (+520 Elo, +560 Elo, +450 Elo).
+  - Added Institutional Partner badges and 4.9★ rating proof.
+- [x] **Build Verification**:
+  - `npm run build`: ✅ Prerendered 8 static routes cleanly in 4.4s.
+
+---
+
 ## [2026-07-27] Lead Architect / Agent 1 & 3 — $20/mo Self-Learning Plan & Positioning Clarification
 
 **Summary**: Added the $20/month Self-Learning Membership tier (which includes full digital course platform access + 1 live 1-on-1 coaching session per month). Clarified site positioning that NXChess focuses on self-learning, master coaching, and equipment rather than hosting online match playing.

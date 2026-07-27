@@ -1,13 +1,11 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import SectionHeading from "@/components/ui/SectionHeading";
-
-export const metadata: Metadata = {
-  title: "Shop",
-  description:
-    "Explore NXChess equipment: handcrafted wooden chess boards, tournament sets, digital timers, and chess accessories.",
-};
+import ProductModal, { ProductItem } from "@/components/ui/ProductModal";
+import { STORE_POLICIES } from "@/lib/constants";
 
 const categories = [
   "All Products",
@@ -17,7 +15,7 @@ const categories = [
   "Digital Tech",
 ];
 
-const products = [
+const products: ProductItem[] = [
   {
     id: "board-1",
     name: "Solid Walnut & Maple Chess Board",
@@ -26,7 +24,6 @@ const products = [
     description: "Handcrafted 2.25\" square tournament regulation board with satin protective coat.",
     icon: "♝",
     badge: "Handmade",
-    isTech: false,
   },
   {
     id: "board-2",
@@ -36,7 +33,6 @@ const products = [
     description: "Deep black ebony wood with maple inlays. Built for grandmaster study and display.",
     icon: "♚",
     badge: "Premium",
-    isTech: false,
   },
   {
     id: "acc-1",
@@ -45,8 +41,7 @@ const products = [
     price: "$54.99",
     description: "FIDE-approved digital chess clock featuring multi-stage delay, increment, and quiet touch buttons.",
     icon: "⏱",
-    badge: "Tech Accent",
-    isTech: true,
+    badge: "Tech Edition",
   },
   {
     id: "acc-2",
@@ -56,7 +51,6 @@ const products = [
     description: "Waterproof heavy-duty nylon bag with slots for board, pieces, clock, and scorebooks.",
     icon: "👜",
     badge: "Essential",
-    isTech: false,
   },
   {
     id: "set-1",
@@ -66,7 +60,6 @@ const products = [
     description: "Full 34-piece set with dual queens. Weighted base with green felt pads.",
     icon: "♛",
     badge: "Best Seller",
-    isTech: false,
   },
   {
     id: "acc-3",
@@ -76,19 +69,20 @@ const products = [
     description: "Comprehensive guide to modern openings with annotated grandmaster games.",
     icon: "📖",
     badge: "Guide",
-    isTech: false,
   },
 ];
 
 export default function ShopPage() {
+  const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
+
   return (
-    <main>
+    <main className="overflow-x-hidden">
       {/* Hero */}
       <section className="relative section-padding overflow-hidden">
         <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-gold/5 rounded-full blur-3xl" />
-        <div className="relative mx-auto max-w-4xl text-center">
+        <div className="relative mx-auto max-w-4xl text-center z-10">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-2">
-            <span className="text-xs font-semibold text-gold uppercase tracking-wider">
+            <span className="text-xs font-bold text-gold uppercase tracking-wider">
               ♜ PREPARATION & EQUIPMENT
             </span>
           </div>
@@ -101,9 +95,29 @@ export default function ShopPage() {
         </div>
       </section>
 
+      {/* Store Trust Policies Bar */}
+      <section className="border-y border-border bg-background-secondary py-4">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="flex flex-wrap items-center justify-between gap-4 text-xs font-semibold text-foreground-secondary">
+            <div className="flex items-center gap-2">
+              <span className="text-chess-green-light font-bold">🚚 UAE Delivery:</span>
+              <span>{STORE_POLICIES.deliveryUae}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-tech-blue-light font-bold">✈️ Worldwide Shipping:</span>
+              <span>{STORE_POLICIES.deliveryGlobal}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-gold-light font-bold">🛡️ Returns:</span>
+              <span>{STORE_POLICIES.returns}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Category Pills */}
-      <section className="border-y border-border bg-background-secondary">
-        <div className="mx-auto max-w-6xl px-6 py-6 overflow-x-auto">
+      <section className="border-b border-border bg-background">
+        <div className="mx-auto max-w-6xl px-6 py-4 overflow-x-auto">
           <div className="flex items-center gap-3">
             {categories.map((cat, idx) => (
               <button
@@ -134,14 +148,19 @@ export default function ShopPage() {
             {products.map((p) => (
               <Card
                 key={p.id}
-                className={`p-0 overflow-hidden flex flex-col justify-between ${p.isTech ? "border-tech-blue/30" : "border-border"}`}
+                className="p-0 overflow-hidden flex flex-col justify-between hover-glow-gold bg-surface border-border"
                 id={`product-card-${p.id}`}
               >
                 {/* Visual Header */}
-                <div className="h-44 bg-surface-elevated flex items-center justify-center relative">
+                <div className="h-44 bg-surface-elevated flex items-center justify-center relative border-b border-border">
                   <span className="text-6xl">{p.icon}</span>
-                  <span className={`absolute top-4 right-4 text-xs font-semibold px-3 py-1 rounded-full ${p.isTech ? "bg-tech-blue/15 text-tech-blue-light border border-tech-blue/30" : "bg-gold/15 text-gold border border-gold/30"}`}>
-                    {p.badge}
+                  {p.badge && (
+                    <span className="absolute top-4 right-4 text-xs font-extrabold px-3 py-1 rounded-full bg-gold/20 text-gold-light border border-gold/30">
+                      {p.badge}
+                    </span>
+                  )}
+                  <span className="absolute bottom-3 left-3 text-[10px] font-bold text-chess-green-light bg-chess-green/15 px-2.5 py-0.5 rounded border border-chess-green/30">
+                    In Stock
                   </span>
                 </div>
 
@@ -158,13 +177,15 @@ export default function ShopPage() {
                   </div>
 
                   <div className="mt-6 flex items-center justify-between border-t border-border pt-4">
-                    <span className="text-2xl font-bold text-gold">{p.price}</span>
+                    <span className="text-2xl font-extrabold text-gold-light">
+                      {p.price}
+                    </span>
                     <Button
-                      href="/contact"
-                      variant={p.isTech ? "tech" : "secondary"}
+                      onClick={() => setSelectedProduct(p)}
+                      variant="gold"
                       size="sm"
                     >
-                      Inquire / Buy
+                      Quick View & Buy
                     </Button>
                   </div>
                 </div>
@@ -174,20 +195,11 @@ export default function ShopPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding border-t border-border bg-background-secondary">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl">Looking for Custom Gear?</h2>
-          <p className="mt-3 text-foreground-secondary">
-            We provide custom school board sets, bulk club discounts, and custom wooden engravings.
-          </p>
-          <div className="mt-8 flex justify-center gap-4">
-            <Button href="/contact" size="lg">
-              Contact Sales Team
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Product Modal Trigger */}
+      <ProductModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
     </main>
   );
 }

@@ -11,6 +11,7 @@ interface ButtonProps {
   id?: string;
   target?: string;
   rel?: string;
+  disabled?: boolean;
 }
 
 const variantStyles = {
@@ -47,12 +48,14 @@ export default function Button({
   id,
   target,
   rel,
+  disabled = false,
 }: ButtonProps) {
   const baseStyles =
     "inline-flex items-center justify-center gap-2.5 transition-all duration-150 cursor-pointer whitespace-nowrap active:translate-y-0.5";
-  const styles = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
+  const disabledStyles = disabled ? "opacity-50 pointer-events-none cursor-not-allowed" : "";
+  const styles = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${disabledStyles} ${className}`;
 
-  if (href) {
+  if (href && !disabled) {
     return (
       <Link href={href} className={styles} id={id} target={target} rel={rel}>
         {children}
@@ -61,7 +64,7 @@ export default function Button({
   }
 
   return (
-    <button type={type} onClick={onClick} className={styles} id={id}>
+    <button type={type} onClick={onClick} disabled={disabled} className={styles} id={id}>
       {children}
     </button>
   );
