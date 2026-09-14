@@ -12,13 +12,15 @@ Once implementation is requested, work in small, reviewable stages. The latest e
 
 ## Product boundaries
 
-- Build a public information website for NX Chess.
+- Build a complete public website for NX Chess as a professional chess teaching center.
+- Core pages: Home, Programs, Curriculum, Coaches, About, FAQs, and Contact. Follow the exact navigation and routes in docs/PLAN.md.
+- Plan Gallery and Events as conditional additions under About, using real approved content only.
 - Help visitors understand the teaching approach, explore the curriculum, and contact the team.
 - No login, registration, user accounts, member area, student dashboard, or admin portal.
 - No online chess game, course player, shop, checkout, subscriptions, or payment flow.
 - Do not add a booking system or collect student records without a new request.
 - Contact through verified direct channels. A form is not part of the default scope.
-- Keep the scope small; do not turn a presentation website into a learning platform.
+- Maintain a full professional center website across every page, while keeping it a public presentation website. Programs and events describe real offerings and direct inquiries to contact; they do not create a learning platform.
 
 ## Content integrity
 
@@ -31,6 +33,7 @@ Use approved photos with permission. Never present generated people or stock mod
 ## Design expectations
 
 Follow docs/DESIGN.md. Favor warm, readable, personal layouts with purposeful variation.
+Preserve a coherent center identity across all pages: shared navigation, active page states, page introductions, typography, photography treatment, contact invitations, and a complete footer. Do not deliver polished Home with unfinished or generic inner pages.
 Do not default to repeated identical cards, oversized gradient slogans, fake statistics, or decorative motion that gets in the way.
 Use a correct chessboard position if a board appears. Do not improvise illegal positions or confusing board orientation.
 All interactive controls must work with keyboard and touch.
@@ -41,7 +44,7 @@ All interactive controls must work with keyboard and touch.
 2. Confirm essential missing content, while proceeding with independent layout work using clearly marked draft content.
 3. Establish the shared visual foundation and the Home page first.
 4. Use feedback on that page to refine the remaining pages.
-5. Implement curriculum navigation and verified contact links.
+5. Complete Programs, Curriculum, Coaches, About, FAQs, and Contact; implement expanded navigation and verified contact links.
 6. Run the checks in docs/BUILD_CHECKLIST.md and inspect the site visually on mobile and desktop.
 7. Report what changed, checks performed, and remaining launch blockers.
 8. Publish only when the owner requests or has already authorized publishing.
