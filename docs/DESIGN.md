@@ -2,6 +2,8 @@
 
 ## Intended feel
 
+Implementation update: the owner requested moving backgrounds after reviewing Signature Chess Club. Use the original NX Chess CSS board drift and photographic pan, with pause/resume, reduced-motion support, and static no-JavaScript behavior. This request authorizes decorative motion while keeping the independent NX Chess design.
+
 Warm, personal, and quietly confident. Interpret "human-looking" as a website with authentic people, natural language, editorial care, and layouts chosen for the content.
 
 The design should make learning chess feel approachable and present a professional teaching center. Every page needs the same level of editorial and visual care.

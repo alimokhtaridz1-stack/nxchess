@@ -147,4 +147,4 @@ All seven core pages are useful and fully styled. The navigation clearly exposes
 - Approved gallery images or real events?
 - Logo, preferred visual references, domain, and hosting?
 
-Remain in planning until the owner requests implementation.
+Implementation was requested after this plan was approved. The seven core pages are now implemented for review; see IMPLEMENTATION.md. Public release awaits confirmed content and a publishing request.

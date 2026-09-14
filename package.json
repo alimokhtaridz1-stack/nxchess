@@ -1,0 +1,14 @@
+{
+  "name": "nxchess",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs && node scripts/serve.mjs",
+    "preview": "node scripts/serve.mjs",
+    "test": "node --test tests/site.test.mjs",
+    "check": "node --check scripts/build.mjs && node --check scripts/serve.mjs && node --check src/pages.mjs && node --check public/site.js && node --check public/motion.js"
+  }
+}

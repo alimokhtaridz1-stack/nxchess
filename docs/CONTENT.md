@@ -89,6 +89,8 @@ Do not add progress bars, locked lessons, account prompts, or enrollment buttons
 
 ## Contact content needed
 
+Confirmed by the owner during implementation: UAE WhatsApp number **+971 55 767 8025**, normalized to `971557678025` for WhatsApp and `+971557678025` for telephone links. No email, address, or opening hours have been supplied.
+
 - Preferred primary channel.
 - WhatsApp number in international format, if used.
 - Public email address, if used.

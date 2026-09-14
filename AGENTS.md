@@ -6,7 +6,9 @@ Read README.md, docs/PLAN.md, docs/DESIGN.md, docs/CONTENT.md, and docs/BUILD_CH
 
 ## Current authorization
 
-This repository contains planning documents only. Do not scaffold an application, install dependencies, create UI code, or deploy a website until the owner explicitly requests implementation. Updating the planning Markdown is allowed when requested.
+The owner explicitly requested implementation, and the seven-page static website is now built for review. Continue implementation and fixes within the approved scope. Publishing still requires a publishing request or existing explicit authorization.
+
+Use the existing dependency-free Node.js static build. Read docs/IMPLEMENTATION.md for the structure and checks. Do not replace the stack merely to introduce a preferred framework. Run npm run build before npm test. Preserve the confirmed UAE WhatsApp contact in src/content.mjs.
 
 Once implementation is requested, work in small, reviewable stages. The latest explicit owner instructions take precedence; keep these documents aligned with approved changes.
 

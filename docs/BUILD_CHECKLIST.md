@@ -1,10 +1,12 @@
 # NX Chess future build checklist
 
-## Planning-only status
+## Implementation status
 
-This is a future implementation checklist. Do not execute it until the owner asks to build.
+The owner requested the build. The seven public pages are now implemented for review. Use this checklist for maintenance and release; see IMPLEMENTATION.md for performed checks and unresolved launch content.
 
-## Technical approach to decide at build time
+## Selected technical approach
+
+Implemented as a dependency-free Node.js static-site generator with semantic HTML, CSS, and a small browser script. Production output consists of static files; no runtime backend is required.
 
 Use a statically rendered public website for a professional chess teaching center. Seven core pages, conditional Gallery and Events, and direct contact links do not require authentication, a database, a payment service, or an application backend.
 
