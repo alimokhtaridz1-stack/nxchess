@@ -4,7 +4,7 @@
 
 Warm, personal, and quietly confident. Interpret "human-looking" as a website with authentic people, natural language, editorial care, and layouts chosen for the content.
 
-The design should make learning chess feel approachable, without looking like a gaming dashboard or a generic software landing page.
+The design should make learning chess feel approachable and present a professional teaching center. Every page needs the same level of editorial and visual care.
 
 ## Proposed visual foundation
 
@@ -46,6 +46,22 @@ Body text starts around 16–18px, with generous line spacing and readable text 
 
 One strong image and a short headline. Keep the first screen understandable without scrolling. Show the curriculum as a progression, not a wall of feature tiles.
 
+### Programs
+
+Use clear program summaries with audience, format, learning focus, and links to the curriculum. A comparison table is useful only when there are multiple confirmed offerings. Avoid pricing-card styling and enrollment controls.
+
+### Coaches
+
+Present portraits and readable biographies with verified details. Use a generous individual profile layout for a single coach and a consistent profile rhythm for a larger team.
+
+### FAQs
+
+Group questions under clear topic headings. Prefer visible answers; accessible disclosure controls are acceptable for a long list. Keep answers useful and easy to scan.
+
+### Gallery and Events, when available
+
+Gallery images use consistent crops and factual captions. Events show dates, status, and practical information clearly. Both pages use the same shared styling and footer as the core pages.
+
 ### Curriculum
 
 Use numbered sections with clear headings and optional anchor navigation. Show stage content openly by default. Each stage has topics, a practice example, and outcomes. On mobile, preserve the reading order without horizontal scrolling.
@@ -71,3 +87,18 @@ Keep the contact methods prominent. Use descriptive link labels and a visible em
 ## Visual review
 
 Check narrow mobile, wider mobile, tablet, and desktop layouts. Inspect actual rendered pages, not only source code. Confirm that navigation, headlines, curriculum sections, and contact details remain readable at 200% zoom.
+
+## Professional center navigation
+
+Use the planned labels: Home, Programs, Curriculum, Coaches, About, FAQs, and Contact us.
+Place the brand at the left, navigation in a balanced row, and a single emphasized Contact us button at the right. Use a clear active-page indicator and calm, consistent spacing.
+Keep all items on one row only while they fit comfortably; switch to mobile navigation rather than shrinking text or wrapping the bar.
+About gains a separately operable dropdown toggle only when Gallery or Events is published. Keep /about directly reachable. Menus must work by click, touch, and keyboard, not hover alone.
+On mobile, use clear rows, expandable child links when needed, and a prominent Contact us action. Preserve all destinations.
+
+## Full website appearance
+
+Use a shared page-title treatment, consistent image color and cropping, aligned content widths, recognizable links, and a substantial footer grouped by Explore, Learn, and Contact.
+Give each inner page a distinct composition suitable for its content. Programs compares learning options; Curriculum explains progression; Coaches introduces people.
+Do not stop at a polished homepage: visually review every core page, mobile menu, footer, and any conditional page.
+An authentic photograph, well-written explanation, and useful cross-link convey professionalism better than unsupported awards or decorative numerical counters.
