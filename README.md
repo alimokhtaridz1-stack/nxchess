@@ -1,12 +1,14 @@
 # NX Chess
 
-A public chess education website, planned for a fresh build.
+A complete public website for a professional chess teaching center, planned for a fresh build.
 
 **Current phase: planning only. No website implementation is authorized by this documentation.**
 
 ## What we are making
 
-A welcoming, thoughtfully designed website where visitors can learn about NX Chess, explore its curriculum, and reach the team. No login or account is needed.
+A welcoming, professionally presented website where visitors can explore programs and curriculum, meet the coaches, learn about the center, read FAQs, and reach the team. No login or account is needed.
+
+Planned navigation: **Home · Programs · Curriculum · Coaches · About · FAQs · Contact us**. About can include Gallery and Events when real content is available. Every page should be as polished and complete as the homepage.
 
 ## Planning documents
 
