@@ -16,7 +16,7 @@ Headline: "Learn chess, one thoughtful move at a time."
 
 Introduction: "Explore the NX Chess curriculum and talk to us about where to begin."
 
-Primary link: "Explore the curriculum"
+Primary link: "Explore our programs"
 Secondary link: "Talk to us"
 
 Draft teaching approach for review:
@@ -100,7 +100,7 @@ Draft invitation: "Tell us a little about your chess experience and what you wou
 Do not request sensitive details or children's personal information in prefilled messages.
 A neutral WhatsApp draft could be: "Hello NX Chess, I would like to know more about your lessons and curriculum."
 
-## Optional FAQ topics
+## FAQs page topics
 
 Publish only after answers are supplied:
 - Do I need any chess experience?
@@ -112,3 +112,25 @@ Publish only after answers are supplied:
 ## Launch content gate
 
 No fake reviews, placeholder contact links, made-up credentials, unconfirmed prices, or draft curriculum presented as fact. If essential information is missing, report it clearly and keep the site in preview until resolved.
+
+## Programs content needed
+
+For each actual program, collect: name, audience, prerequisites, format, teaching focus, related curriculum stages, relevant coaches, and inquiry instructions.
+Possible categories to discuss are children, adults, group instruction, private coaching, and tournament preparation. Do not treat this list as existing services.
+Publish duration, schedule, class size, pricing, or trial availability only when confirmed. Programs explains how teaching is offered; Curriculum explains what is learned.
+
+## Coaches page content needed
+
+Use a complete profile for each real coach: approved portrait, public name, role, short biography, teaching focus, and confirmed experience or credentials. A center with one coach should show one real profile.
+Keep detailed biographies here and use shorter previews on Home and About.
+
+## Professional center content consistency
+
+About tells the center story; Programs explains offerings; Curriculum explains progression; Coaches introduces teachers; FAQs covers practical questions; Contact provides verified channels.
+Use consistent program names and stage names throughout. Avoid repeating whole paragraphs across pages.
+
+## Conditional Gallery and Events content
+
+Gallery requires approved real images, accurate captions, and permission for intended publication.
+Events requires confirmed title, date, time zone, location or delivery format, audience, status, and contact instructions. Do not imply an event exists until confirmed.
+If material is missing, omit those public pages and their navigation entries. Keep them as planned opportunities in these documents.
